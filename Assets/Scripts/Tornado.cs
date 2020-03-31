@@ -7,6 +7,7 @@ public class Tornado : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody rdb;
     public float time;
+    public GameObject explosionPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,8 @@ public class Tornado : MonoBehaviour
     }
     void ObjDestroy()
     {
+        GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Destroy(explo, 3);
         Destroy(gameObject);
     }
 }

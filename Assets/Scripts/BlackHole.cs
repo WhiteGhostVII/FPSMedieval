@@ -6,7 +6,8 @@ public class BlackHole : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody rdb;
-    public float bombForce = -5000;        
+    public float bombForce = -5000;
+    public GameObject explosionPrefab;
     void Start()
     {
         rdb = GetComponent<Rigidbody>();        
@@ -26,7 +27,8 @@ public class BlackHole : MonoBehaviour
     }
     void Implode()
     {
-        
+        GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Destroy(explo, 3);
         RaycastHit[] hits;
         hits = Physics.SphereCastAll(transform.position, 1000000, Vector3.up, 10);
         

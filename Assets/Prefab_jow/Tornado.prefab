@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 10
+  explosionPrefab: {fileID: 4722385888786673728, guid: f5249468b03d6dd459cbd920944bc3f7,
+    type: 3}
 --- !u!54 &4957848418715053876
 Rigidbody:
   m_ObjectHideFlags: 0

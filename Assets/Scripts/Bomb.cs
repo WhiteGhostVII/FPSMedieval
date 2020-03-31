@@ -7,6 +7,7 @@ public class Bomb : MonoBehaviour
     // Start is called before the first frame update
 
     public float bombForce = 1000;
+    public GameObject explosionPrefab;
     void Start()
     {
         Invoke("Explode", 3);
@@ -16,6 +17,8 @@ public class Bomb : MonoBehaviour
     
     void Explode()
     {
+        GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Destroy(explo, 3);
         print("Explodiu!");
         Destroy(gameObject);
         RaycastHit[] hits;

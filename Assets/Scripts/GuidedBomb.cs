@@ -5,9 +5,9 @@ using UnityEngine;
 public class GuidedBomb : MonoBehaviour
 {
     public GameObject target;
-
     Rigidbody rdb;
     public float bombForce = 1000;
+    public GameObject explosionPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +29,9 @@ public class GuidedBomb : MonoBehaviour
 
     void Explode()
     {
-        print("Boom!");
+        GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Destroy(explo, 3);
+        print("Explodiu!");
         Destroy(gameObject);
         RaycastHit[] hits;
         hits = Physics.SphereCastAll(transform.position, 5, Vector3.up, 10);

@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombForce: 100000
+  explosionPrefab: {fileID: 4722385888786673728, guid: 01d17bb4a7860a84ba60df037d776bf1,
+    type: 3}
 --- !u!136 &6979119388632806269
 CapsuleCollider:
   m_ObjectHideFlags: 0
