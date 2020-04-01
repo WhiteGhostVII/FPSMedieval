@@ -100,7 +100,12 @@ public class PlayerShoot : MonoBehaviour
             {
                 myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
             }
-            
+            if (myprojectile.GetComponent<Shuriken>())
+            {
+                GetComponent<AudioSource>().Play();
+            }
+
+
 
 
 

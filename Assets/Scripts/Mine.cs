@@ -7,8 +7,7 @@ public class Mine : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody rdb;
     public float bombForce = 2000;
-
-    
+    public GameObject explosionPrefab;
     void Start()
     {
         rdb = GetComponent<Rigidbody>();        
@@ -37,6 +36,8 @@ public class Mine : MonoBehaviour
 
     void Explode()
     {
+        GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Destroy(explo, 3);
         print("Explodiu!");
         Destroy(gameObject);
         RaycastHit[] hits;

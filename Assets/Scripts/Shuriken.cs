@@ -11,6 +11,7 @@ public class Shuriken : MonoBehaviour
     void Start()
     {
         rdb = GetComponent<Rigidbody>();
+        //PlayAudio();
         Invoke("Explode", 3);
         Invoke("ObjDestroy", 11);
         //gameObject.GetComponent<MeshRenderer>().material = mat1;        
@@ -23,9 +24,10 @@ public class Shuriken : MonoBehaviour
     }
     void Explode()
     {
+        //StopAudio();
         print("Explodiu!"); 
         for(int i = 0; i < 8; i++)
-        {
+        {            
             Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation);            
             //gameObject.GetComponent<MeshRenderer>().material = mat2;            
 
@@ -54,4 +56,12 @@ public class Shuriken : MonoBehaviour
 
 
     }
+    //void PlayAudio()
+    //{
+    //    GetComponent<AudioSource>().Play();
+    //}
+    //void StopAudio()
+    //{
+    //    GetComponent<AudioSource>().Stop();
+    //}
 }

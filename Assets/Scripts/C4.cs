@@ -31,6 +31,7 @@ public class C4 : MonoBehaviour
     {
         GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(explo, 3);
+        print("Explodiu!");
         Destroy(gameObject);
         RaycastHit[] hits;
         hits = Physics.SphereCastAll(transform.position, 5, Vector3.up, 10);

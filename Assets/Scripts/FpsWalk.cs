@@ -11,13 +11,14 @@ public class FpsWalk : MonoBehaviour
         if(!chtr)
         chtr = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
    
     void Update()
     {
         //criacao de vetor de movimento local
-        move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Jump"), Input.GetAxis("Vertical"));
         //captura de rotacao do corpo
         rot.y = Input.GetAxis("Mouse X");
         //conversao de direcao local pra global 

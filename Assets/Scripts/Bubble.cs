@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     // Start is called before the first frame update
-   
+    public float Time;
     void Start()
     {
         
@@ -14,7 +14,7 @@ public class Bubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, 20);
+        Invoke("ObjDestroy", Time);
     }
     private void OnCollisionEnter(Collision collision)
     {        
@@ -36,6 +36,10 @@ public class Bubble : MonoBehaviour
           
             }
         }
+    }
+    void ObjDestroy()
+    {        
+        Destroy(gameObject);
     }
     
 

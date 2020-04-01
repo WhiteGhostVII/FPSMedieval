@@ -35,7 +35,7 @@ public class Tornado : MonoBehaviour
         
     }
     void ObjDestroy()
-    {
+    {        
         GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(explo, 3);
         Destroy(gameObject);

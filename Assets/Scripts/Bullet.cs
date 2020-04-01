@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float bombForce = 0;
     void Start()
     {
+        GetComponent<AudioSource>().Play();
         Invoke("Explode", 3);        
     }
 
