@@ -30,8 +30,8 @@ public class Bubble : MonoBehaviour
                 {
                     
                     hit.rigidbody.isKinematic = false;
-                    hit.rigidbody.useGravity = false;
-   
+                    hit.rigidbody.useGravity = false;                    
+
                 }              
           
             }

@@ -24,6 +24,10 @@ public class BlackHole : MonoBehaviour
     {
         print("Grudou");
         rdb.isKinematic = true;
+        if (collision.collider.attachedRigidbody)
+        {
+            transform.parent = collision.collider.transform;
+        }
     }
     void Implode()
     {
@@ -39,7 +43,8 @@ public class BlackHole : MonoBehaviour
                 if (hit.rigidbody) 
                 {
                     hit.rigidbody.isKinematic = false;
-                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 100000);  
+                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 100000);
+                    hit.collider.gameObject.SendMessage("BlackHoleExplode", SendMessageOptions.DontRequireReceiver);
                     //Objetos grudarem na posição do black hole
                     //hit.rigidbody.transform.LookAt(rdb.transform.position,Vector3.up*1000);  
                     //hit.transform.position = rdb.position;

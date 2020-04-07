@@ -68,9 +68,11 @@
     <Compile Include="Assets\Scripts\Bubble.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\C4.cs" />
+    <Compile Include="Assets\Scripts\DamageControl.cs" />
     <Compile Include="Assets\Scripts\FPSPlayer.cs" />
     <Compile Include="Assets\Scripts\FpsWalk.cs" />
     <Compile Include="Assets\Scripts\GuidedBomb.cs" />
+    <Compile Include="Assets\Scripts\IAWalk.cs" />
     <Compile Include="Assets\Scripts\Mine.cs" />
     <Compile Include="Assets\Scripts\Missile.cs" />
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />

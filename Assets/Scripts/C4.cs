@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class C4 : MonoBehaviour
 {
-    Rigidbody rdb;
+    public Rigidbody rdb;
     public float bombForce = 1000;
     public GameObject explosionPrefab;
     // Start is called before the first frame update
@@ -25,16 +25,20 @@ public class C4 : MonoBehaviour
     {
         print("Grudou");
         rdb.isKinematic = true;
+        if (collision.collider.attachedRigidbody)
+        {            
+            transform.parent = collision.collider.transform;
+        }
         
     }
-    void Explode()
+    public void Explode()
     {
         GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(explo, 3);
         print("Explodiu!");
         Destroy(gameObject);
         RaycastHit[] hits;
-        hits = Physics.SphereCastAll(transform.position, 5, Vector3.up, 10);
+        hits = Physics.SphereCastAll(transform.position, 5, Vector3.up, 5);
 
         if (hits.Length > 0)
         {
@@ -42,10 +46,15 @@ public class C4 : MonoBehaviour
             {
                 if (hit.rigidbody)
                 {
-                    hit.rigidbody.isKinematic = false;
-                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
+                    if(!hit.rigidbody.CompareTag("Casas"))
+                    {
+                        hit.rigidbody.isKinematic = false;
+                    }                    
+                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 5);
+                    hit.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
                 }
             }
-        }        
+        }
+        
     }
 }

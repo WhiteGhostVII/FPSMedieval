@@ -6,13 +6,14 @@ public class Shuriken : MonoBehaviour
 {
     public float bombForce = 1000;
     Rigidbody rdb;
+    private Shuriken shu;
     //public Material mat1;
     //public Material mat2;
     void Start()
     {
         rdb = GetComponent<Rigidbody>();
         //PlayAudio();
-        Invoke("Explode", 3);
+        Invoke("Explode", 3);        
         Invoke("ObjDestroy", 11);
         //gameObject.GetComponent<MeshRenderer>().material = mat1;        
     }
@@ -22,34 +23,46 @@ public class Shuriken : MonoBehaviour
     {
         rdb.transform.Rotate(Vector3.up, 60);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Inimigo"))
+        {
+            collision.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
+        }
+        
+           
+
+    }
     void Explode()
     {
         //StopAudio();
         print("Explodiu!"); 
-        for(int i = 0; i < 8; i++)
+        for(int i = 0; i < 5; i++)
         {            
-            
-            Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation);            
-            //gameObject.GetComponent<MeshRenderer>().material = mat2;            
-
+             Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation);
         }
         
+        //Instantiate(gameObject, gameObject.transform.position + Vector3.forward, gameObject.transform.rotation);
+        //Instantiate(gameObject, gameObject.transform.position + Vector3.left, gameObject.transform.rotation);
+        //Instantiate(gameObject, gameObject.transform.position + Vector3.right, gameObject.transform.rotation);
+        //Instantiate(gameObject, gameObject.transform.position + Vector3.back, gameObject.transform.rotation);
+
 
 
         //gameObject.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 1);
         //gameObject.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 1);            
         //gameObject.GetComponent<Material>().color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 1);
 
-            //Instantiate(gameObject, gameObject.transform.position + Vector3.forward, gameObject.transform.rotation);
-            //Instantiate(gameObject, gameObject.transform.position + Vector3.left, gameObject.transform.rotation);
-            //Instantiate(gameObject, gameObject.transform.position + Vector3.right, gameObject.transform.rotation);
-            //Instantiate(gameObject, gameObject.transform.position + Vector3.back, gameObject.transform.rotation);
+        //Instantiate(gameObject, gameObject.transform.position + Vector3.forward, gameObject.transform.rotation);
+        //Instantiate(gameObject, gameObject.transform.position + Vector3.left, gameObject.transform.rotation);
+        //Instantiate(gameObject, gameObject.transform.position + Vector3.right, gameObject.transform.rotation);
+        //Instantiate(gameObject, gameObject.transform.position + Vector3.back, gameObject.transform.rotation);
 
     }
     void ObjDestroy()
     {
         GameObject[] killEmAll;
-        killEmAll = GameObject.FindGameObjectsWithTag("Cluster");
+        killEmAll = GameObject.FindGameObjectsWithTag("Shuriken");
         for (int i = 0; i < killEmAll.Length; i++)
         {
             Destroy(killEmAll[i].gameObject);

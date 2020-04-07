@@ -30,8 +30,12 @@ public class Bomb : MonoBehaviour
             {
                 if (hit.rigidbody)
                 {
-                    hit.rigidbody.isKinematic = false;
-                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);                    
+                    if (!hit.rigidbody.CompareTag("Casas"))
+                    {
+                        hit.rigidbody.isKinematic = false;
+                    }
+                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
+                    hit.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
                 }
             }
         }

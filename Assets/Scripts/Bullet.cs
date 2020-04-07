@@ -17,22 +17,24 @@ public class Bullet : MonoBehaviour
     {
         
     }
+    
     void Explode()
     {
         Destroy(gameObject);
-        RaycastHit[] hits;
-        hits = Physics.SphereCastAll(transform.position, 5, Vector3.up, 10);
-
-        if (hits.Length > 0)
-        {
-            foreach (RaycastHit hit in hits)
-            {
-                if (hit.rigidbody)
-                {
-                    hit.rigidbody.isKinematic = false;
-                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
-                }
-            }
-        }
+        //RaycastHit[] hits;
+        //hits = Physics.SphereCastAll(transform.position, 5, Vector3.up, 10);
+        //
+        //if (hits.Length > 0)
+        //{
+        //    foreach (RaycastHit hit in hits)
+        //    {
+        //        if (hit.rigidbody)
+        //        {
+        //            hit.rigidbody.isKinematic = false;
+        //            hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
+        //            //hit.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
+        //        }
+        //    }
+        //}
     }
 }

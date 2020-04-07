@@ -41,7 +41,14 @@ public class GuidedBomb : MonoBehaviour
             foreach (RaycastHit hit in hits)
             {
                 if (hit.rigidbody)
+                {
+                    if (!hit.rigidbody.CompareTag("Casas"))
+                    {
+                        hit.rigidbody.isKinematic = false;
+                    }
                     hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
+                    hit.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
+                }
             }
         }
     }

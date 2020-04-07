@@ -4,7 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Cluster
+  - Sniper
+  - C4
+  - Bubble
+  - Inimigo
+  - Shuriken
+  - BlackHole
+  - Casas
   layers:
   - Default
   - TransparentFX
