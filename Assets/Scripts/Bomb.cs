@@ -31,7 +31,7 @@ public class Bomb : MonoBehaviour
                 if (hit.rigidbody)
                 {
                     hit.rigidbody.isKinematic = false;
-                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
+                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);                    
                 }
             }
         }

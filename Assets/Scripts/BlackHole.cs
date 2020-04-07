@@ -40,8 +40,10 @@ public class BlackHole : MonoBehaviour
                 {
                     hit.rigidbody.isKinematic = false;
                     hit.rigidbody.AddExplosionForce(bombForce, transform.position, 100000);  
-                    //hit.rigidbody.transform.LookAt(rdb.transform.position,Vector3.up*1000);                            
-
+                    //Objetos grudarem na posição do black hole
+                    //hit.rigidbody.transform.LookAt(rdb.transform.position,Vector3.up*1000);  
+                    //hit.transform.position = rdb.position;
+                    //hit.rigidbody.isKinematic = true;
                 }
             }
         }

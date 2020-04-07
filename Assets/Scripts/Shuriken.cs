@@ -20,7 +20,7 @@ public class Shuriken : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rdb.transform.Rotate(Vector3.up, 20);
+        rdb.transform.Rotate(Vector3.up, 60);
     }
     void Explode()
     {
@@ -28,6 +28,7 @@ public class Shuriken : MonoBehaviour
         print("Explodiu!"); 
         for(int i = 0; i < 8; i++)
         {            
+            
             Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation);            
             //gameObject.GetComponent<MeshRenderer>().material = mat2;            
 
