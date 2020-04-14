@@ -80,8 +80,13 @@
     <Compile Include="Assets\Scripts\Shuriken.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\Tornado.cs" />
+    <Compile Include="Assets\Scripts\TrdCam.cs" />
+    <Compile Include="Assets\Scripts\TrdWalk.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <None Include="Assets\Boy\shader\Toony-Lighted.shader" />
     <None Include="Assets\AurynSky\Rockets Missiles and Bombs\READ ME.txt" />
+    <None Include="Assets\Boy\shader\Toony-Basic.shader" />
+    <None Include="Assets\Boy\shader\Toon2side-Lighted.shader" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/white/Documents/Puc - 5 Semestre/Programação/FPSMedieval/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
