@@ -8,7 +8,7 @@ public class DamageControl : MonoBehaviour
     // Start is called before the first frame update
     public int lifes = 3;
     public IAWalk iawalk;
-    private Vector3 pos;
+    private Vector3 pos;    
     void Start()
     {
                 
@@ -44,11 +44,11 @@ public class DamageControl : MonoBehaviour
         }
         if(collision.collider.CompareTag("Bubble"))
         {
-            iawalk.currentState = IAWalk.IaState.Stopped;
             GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<Rigidbody>().mass = 10;            
             GetComponent<Rigidbody>().useGravity = false;
-            pos = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+            pos = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);            
+            iawalk.currentState = IAWalk.IaState.Stopped;
             transform.LookAt(pos);
             GetComponent<IAWalk>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;

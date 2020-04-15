@@ -22,7 +22,6 @@ public class TrdWalk : MonoBehaviour
     GameObject referenceObject;
     void Start()
     {
-        
         StartCoroutine(Idle());
         referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
     }

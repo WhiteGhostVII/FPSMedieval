@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 6371464029430556567}
-  target: {fileID: 0}
+  target: {fileID: 100000, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
   anim: {fileID: 5135704028468553992}
   patrolposition: {x: 0, y: 0, z: 0}
   stoppedTime: 0

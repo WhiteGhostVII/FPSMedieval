@@ -10,7 +10,8 @@ public class Mine : MonoBehaviour
     public GameObject explosionPrefab;
     void Start()
     {
-        rdb = GetComponent<Rigidbody>();        
+        rdb = GetComponent<Rigidbody>();
+        Invoke("ObjDestroy", 60);
     }
 
     void Update()
@@ -63,6 +64,10 @@ public class Mine : MonoBehaviour
                 }
             }
         }
+    }
+    void ObjDestroy()
+    {
+        Destroy(gameObject);
     }
     //private void Grudar()
     //{
