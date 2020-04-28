@@ -27,9 +27,20 @@ public class TrdCam : MonoBehaviour
     {
         fakeObject.transform.position = Vector3.Lerp(fakeObject.transform.position,
                                           player.transform.position, Time.deltaTime * 10);
-        
+
+        Vector3 dirback = transform.position - (player.transform.position + ajustlook);
+        float distancetohit = 10; 
+
+        if (Physics.Raycast(player.transform.position + ajustlook, dirback, out RaycastHit hit, 10, 65279 ))
+        {
+            distancetohit = hit.distance;
+            Debug.DrawLine(player.transform.position + ajustlook, hit.point);
+        }
+
+        Vector3 backvector = fakeObject.transform.forward * ajust.z;
+        backvector = Vector3.ClampMagnitude(backvector, distancetohit);
         transform.position = fakeObject.transform.position +
-                             fakeObject.transform.forward * ajust.z +
+                             backvector +
                              fakeObject.transform.up * ajust.y;
         transform.LookAt(player.transform.position + ajustlook);
 

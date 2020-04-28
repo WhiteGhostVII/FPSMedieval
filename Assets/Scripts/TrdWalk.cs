@@ -11,6 +11,7 @@ public class TrdWalk : MonoBehaviour
         walk,
         jump,
         die,
+        attack,
     }
     public States state;
     public Animator anim;
@@ -38,6 +39,15 @@ public class TrdWalk : MonoBehaviour
         transform.forward = Vector3.Lerp(transform.forward,direction,Time.fixedDeltaTime*20);
         
         rdb.AddForce(move * (movforce/(rdb.velocity.magnitude + 1)));
+
+        
+    }
+    private void Update()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(Attack());
+        }
     }
     IEnumerator Idle()
     {
@@ -67,5 +77,13 @@ public class TrdWalk : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
         }
+    }
+    IEnumerator Attack()
+    {
+        state = States.attack;
+        anim.SetTrigger("Attack");
+        yield return new WaitForSeconds(.5f);
+        StartCoroutine(Idle());
+        
     }
 }
