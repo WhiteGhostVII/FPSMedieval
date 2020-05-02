@@ -8,7 +8,8 @@ public class DamageControl : MonoBehaviour
     // Start is called before the first frame update
     public int lifes = 3;
     public IAWalk iawalk;
-    private Vector3 pos;    
+    private Vector3 pos;
+    public GameObject obj;
     void Start()
     {
                 
@@ -23,15 +24,30 @@ public class DamageControl : MonoBehaviour
     {
         iawalk.currentState = IAWalk.IaState.Dying;
         Destroy(gameObject, 3);
-    }    
-        
+    }
+    public void Damage()
+    {
+        StartCoroutine(Blink());
+        //Destroy(gameObject);
+    }
+    IEnumerator Blink()
+    {
+        //int blinks = 10;
+        //while (blinks > 0)
+        //{
+            iawalk.currentState = IAWalk.IaState.Damage;
+            yield return new WaitForSeconds(0.1f);
+            //blinks--;
+        //}
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         //if (collision.collider.CompareTag("Shuriken"))
         //{
         //    lifes--;
         //    iawalk.currentState = IAWalk.IaState.Damage;
-        //}
+        //}        
         
         if (collision.collider.CompareTag("Sniper"))
         {
@@ -60,6 +76,7 @@ public class DamageControl : MonoBehaviour
         }
 
     }
+    
     private void BlackHoleExplode()
     {
         GetComponent<Rigidbody>().mass = 10;

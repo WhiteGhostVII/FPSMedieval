@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7576050228932055516}
   - component: {fileID: 3869597531366480255}
-  - component: {fileID: 5641990702236601439}
   - component: {fileID: 7181162922630405163}
+  - component: {fileID: 5641990702236601439}
   m_Layer: 0
   m_Name: Sword02
   m_TagString: WeaponDroped
@@ -49,19 +49,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &5641990702236601439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818478380624401880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f5537f3a2456f340948cd8e9c9d243a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_CollisionDetection: 2
 --- !u!65 &7181162922630405163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75,6 +63,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16530393, y: 0.069862224, z: 0.9121618}
   m_Center: {x: 0.0022310987, y: 0.0008758381, z: 0.8319354}
+--- !u!114 &5641990702236601439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818478380624401880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5537f3a2456f340948cd8e9c9d243a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4593742851128548375
 PrefabInstance:
   m_ObjectHideFlags: 0

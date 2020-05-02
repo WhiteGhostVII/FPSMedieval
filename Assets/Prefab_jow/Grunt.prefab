@@ -54,7 +54,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6371464029430556565}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1.17
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 6371464029430556567}
-  target: {fileID: 100000, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+  target: {fileID: 0}
   anim: {fileID: 5135704028468553992}
   patrolposition: {x: 0, y: 0, z: 0}
   stoppedTime: 0
@@ -114,7 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 3
-  iawalk: {fileID: 0}
+  iawalk: {fileID: 6371464029430556566}
+  obj: {fileID: 6371464029430556565}
 --- !u!136 &7026358011313263472
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -150,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 388476416, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.94
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 388476416, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_LocalPosition.z

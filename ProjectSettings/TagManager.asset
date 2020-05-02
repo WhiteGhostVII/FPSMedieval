@@ -12,6 +12,7 @@ TagManager:
   - BlackHole
   - Casas
   - WeaponDroped
+  - Weapon
   layers:
   - Default
   - TransparentFX

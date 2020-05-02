@@ -16,14 +16,14 @@ public class ItemGrabber : MonoBehaviour
                 weaponOnHand.transform.parent = null;
                 weaponOnHand.GetComponent<Rigidbody>().isKinematic = false;
                 weaponOnHand.transform.Translate(-transform.up);
-                weaponOnHand.layer = 0;
-            }
+                weaponOnHand.layer = 0;                
+            }            
             weaponOnHand = other.gameObject;
             other.transform.parent = handposition;
             other.transform.localPosition = Vector3.zero;
             weaponOnHand.GetComponent<Rigidbody>().isKinematic = true;
             other.transform.localRotation = Quaternion.identity;
-            other.transform.gameObject.layer = transform.gameObject.layer;
+            other.transform.gameObject.layer = transform.gameObject.layer;            
             
         }
     }
