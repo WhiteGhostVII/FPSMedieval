@@ -137,6 +137,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6371464029430556563}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 388476414, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_Name
       value: GruntPolyart

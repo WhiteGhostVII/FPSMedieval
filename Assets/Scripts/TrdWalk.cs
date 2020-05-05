@@ -20,7 +20,7 @@ public class TrdWalk : MonoBehaviour
     public float movforce = 100;
 
     Vector3 direction;
-    GameObject referenceObject;
+    GameObject referenceObject;    
     void Start()
     {
         StartCoroutine(Idle());
@@ -40,13 +40,17 @@ public class TrdWalk : MonoBehaviour
         
         rdb.AddForce(move * (movforce/(rdb.velocity.magnitude + 1)));
 
-        
+        rdb.AddForce(-rdb.velocity * 250);
     }
     private void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
             StartCoroutine(Attack());
+        }
+        if(Input.GetButtonDown("Jump"))
+        {
+            StartCoroutine(Jump());
         }
     }
     IEnumerator Idle()
@@ -85,5 +89,27 @@ public class TrdWalk : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         StartCoroutine(Idle());
         
+    }
+
+    IEnumerator Jump()
+    {
+        state = States.jump;
+        rdb.AddForce(Vector3.up * 100, ForceMode.Impulse);
+        while (state == States.jump)
+        {
+            if(Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hit, 65279))
+            {
+                anim.SetFloat("GroundDistance", hit.distance);           
+                if(hit.distance < 0.2f && rdb.velocity.y <= 0)
+                {
+                    StartCoroutine(Idle());
+                }
+            }
+            else
+            {
+                anim.SetFloat("GroundDistance", 5);
+            }
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

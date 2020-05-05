@@ -31,11 +31,11 @@ public class TrdCam : MonoBehaviour
         Vector3 dirback = transform.position - (player.transform.position + ajustlook);
         float distancetohit = 10; 
 
-        if (Physics.Raycast(player.transform.position + ajustlook, dirback, out RaycastHit hit, 10, 65279 ))
-        {
-            distancetohit = hit.distance;
-            Debug.DrawLine(player.transform.position + ajustlook, hit.point);
-        }
+        //if (Physics.Raycast(player.transform.position + ajustlook, dirback, out RaycastHit hit, 10, 65279))
+        //{
+        //    distancetohit = hit.distance;
+        //    Debug.DrawLine(player.transform.position + ajustlook, hit.point);
+        //}
 
         Vector3 backvector = fakeObject.transform.forward * ajust.z;
         backvector = Vector3.ClampMagnitude(backvector, distancetohit);
