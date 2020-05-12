@@ -5,17 +5,15 @@ using UnityEngine;
 public class Shuriken : MonoBehaviour
 {
     public float bombForce = 1000;
-    Rigidbody rdb;
-    private Shuriken shu;
-    //public Material mat1;
-    //public Material mat2;
+    Rigidbody rdb;    
+    //private Shuriken shu;    
     void Start()
-    {
-        rdb = GetComponent<Rigidbody>();
-        //PlayAudio();
+    {        
+        rdb = GetComponent<Rigidbody>();        
         Invoke("Explode", 3);        
-        Invoke("ObjDestroy", 11);
-        //gameObject.GetComponent<MeshRenderer>().material = mat1;        
+        Invoke("ObjDestroy", 11);        
+        //gameObject.GetComponent<MeshRenderer>().material = mat1;    
+        //PlayAudio();
     }
 
     // Update is called once per frame
@@ -33,13 +31,15 @@ public class Shuriken : MonoBehaviour
            
 
     }
+    
     void Explode()
     {
         //StopAudio();
+                
         print("Explodiu!"); 
         for(int i = 0; i < 5; i++)
-        {            
-             Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation);
+        {        
+            Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation);
         }
         
         //Instantiate(gameObject, gameObject.transform.position + Vector3.forward, gameObject.transform.rotation);
@@ -67,7 +67,7 @@ public class Shuriken : MonoBehaviour
         {
             Destroy(killEmAll[i].gameObject);
         }
-
+        PlayerShoot.Instance.StopAudio();
 
     }
     //void PlayAudio()
@@ -76,6 +76,6 @@ public class Shuriken : MonoBehaviour
     //}
     //void StopAudio()
     //{
-    //    GetComponent<AudioSource>().Stop();
+    //    GetComponent<AudioSource>().Stop();        
     //}
 }

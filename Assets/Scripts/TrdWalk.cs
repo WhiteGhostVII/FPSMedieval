@@ -20,11 +20,11 @@ public class TrdWalk : MonoBehaviour
     public float movforce = 100;
 
     Vector3 direction;
-    GameObject referenceObject;    
-    void Start()
+    public GameObject referenceObject;    
+    void Awake()
     {
         StartCoroutine(Idle());
-        referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
+        //referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
     }
 
     // Update is called once per frame

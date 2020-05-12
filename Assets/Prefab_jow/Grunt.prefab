@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6371464029430556557}
   - component: {fileID: 6371464029430556556}
   - component: {fileID: 7026358011313263472}
+  - component: {fileID: 2361730993128091015}
   m_Layer: 0
   m_Name: Grunt
   m_TagString: Inimigo
@@ -130,6 +131,18 @@ CapsuleCollider:
   m_Height: 2.07
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0.06}
+--- !u!114 &2361730993128091015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371464029430556565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6933ba6f149365145a4099ca13b0eb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5135704028315813111
 PrefabInstance:
   m_ObjectHideFlags: 0

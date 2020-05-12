@@ -7,6 +7,7 @@ public class DamageControl : MonoBehaviour
 {
     // Start is called before the first frame update
     public int lifes = 3;
+    //public int kills = 0;
     public IAWalk iawalk;
     private Vector3 pos;
     public GameObject obj;
@@ -18,13 +19,19 @@ public class DamageControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (lifes <= 0)
+        {
+            iawalk.currentState = IAWalk.IaState.Dying;
+            Destroy(gameObject, 3);            
+        }
         
     }
     public void GetDamage()
-    {
+    {        
         iawalk.currentState = IAWalk.IaState.Dying;
         Destroy(gameObject, 3);
     }
+    
     public void Damage()
     {
         StartCoroutine(Blink());
@@ -68,13 +75,8 @@ public class DamageControl : MonoBehaviour
             transform.LookAt(pos);
             GetComponent<IAWalk>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
-        }
-        if(lifes < 0)
-        {
-            iawalk.currentState = IAWalk.IaState.Dying;
-            Destroy(gameObject, 3);            
-        }
-
+        }     
+        
     }
     
     private void BlackHoleExplode()

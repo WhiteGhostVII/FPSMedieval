@@ -8,11 +8,11 @@ public class PlayerShoot : MonoBehaviour
 {
     public Text textArma;
     public GameObject[] projectilesPrefab;
-    int indexWeapon;
-    int[] selectWeapon;
+    int indexWeapon;    
     public GameObject target;
-    public GameObject laserpoint;
+    public GameObject laserpoint;    
     PlayerControls controls;
+    public static PlayerShoot Instance;
     void Awake()
     {
         textArma.text = "Arma Atual: Sniper";
@@ -20,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
         controls.Gameplay.Fire.performed += ctx => FireGamepad();
         //controls.Gameplay.Rotate.performed += ctx => MovHead();
         //controls.Gameplay.WeaponSelection.performed += ctx => WeaponSelectionGamepad();
-
+        Instance = this;
 
     }
     void FireGamepad()
@@ -54,10 +54,10 @@ public class PlayerShoot : MonoBehaviour
         {
             myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
         }
-        if (myprojectile.GetComponent<Shuriken>())
-        {
-            GetComponent<AudioSource>().Play();
-        }
+        //if (myprojectile.GetComponent<Shuriken>())
+        //{
+        //    GetComponent<AudioSource>().Play();
+        //}
     }
     void FireMouse()
     {
@@ -95,7 +95,7 @@ public class PlayerShoot : MonoBehaviour
             }
             if (myprojectile.GetComponent<Shuriken>())
             {
-                GetComponent<AudioSource>().Play();
+                PlayAudio();
             }
         }
     }    
@@ -173,7 +173,15 @@ public class PlayerShoot : MonoBehaviour
         {
             laserpoint.transform.position = hit.point;
         }
-
+        
+    }
+    public void PlayAudio()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+    public void StopAudio()
+    {
+        GetComponent<AudioSource>().Stop();
     }
     void WeaponSelectionGamepad()
     {
