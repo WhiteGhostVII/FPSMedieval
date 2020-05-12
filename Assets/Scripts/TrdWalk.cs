@@ -18,18 +18,22 @@ public class TrdWalk : MonoBehaviour
     public Rigidbody rdb;
     private Vector3 move;
     public float movforce = 100;
+    public float jumpforce = 1000;
+    float jumptime = 0.5f;
+    public bool ikActive;
 
     Vector3 direction;
-    public GameObject referenceObject;    
+    GameObject referenceObject;    
     void Awake()
     {
         StartCoroutine(Idle());
-        //referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
+        referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         move = referenceObject.transform.TransformDirection(move);
         if (move.magnitude>0)
@@ -41,6 +45,10 @@ public class TrdWalk : MonoBehaviour
         rdb.AddForce(move * (movforce/(rdb.velocity.magnitude + 1)));
 
         rdb.AddForce(-rdb.velocity * 250);
+        if (Physics.Raycast(transform.position + Vector3.up*.5f, Vector3.down, out RaycastHit hit, 65279))
+        {
+            anim.SetFloat("GroundDistance", hit.distance);
+        }
     }
     private void Update()
     {
@@ -51,6 +59,10 @@ public class TrdWalk : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             StartCoroutine(Jump());
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            jumptime = 0;
         }
     }
     IEnumerator Idle()
@@ -94,22 +106,53 @@ public class TrdWalk : MonoBehaviour
     IEnumerator Jump()
     {
         state = States.jump;
-        rdb.AddForce(Vector3.up * 100, ForceMode.Impulse);
+        jumptime = 0.5f;
+        if (Physics.Raycast(transform.position + Vector3.up * .5f, Vector3.down, out RaycastHit hit, 65279))
+        {
+            if(hit.distance > 0.6f)
+            {
+                StartCoroutine(Idle());
+            }
+        }
+            //rdb.AddForce(Vector3.up * 100, ForceMode.Impulse);
         while (state == States.jump)
         {
-            if(Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hit, 65279))
+            rdb.AddForce(Vector3.up * jumpforce * jumptime);
+            jumptime -= Time.fixedDeltaTime;
+
+            if(jumptime < 0)
             {
-                anim.SetFloat("GroundDistance", hit.distance);           
-                if(hit.distance < 0.2f && rdb.velocity.y <= 0)
-                {
-                    StartCoroutine(Idle());
-                }
+                StartCoroutine(Idle());
             }
-            else
+            //anim.SetFloat("GroundDistance", 3); 
+            
+
+
+            //if(Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hit, 65279))
+            //{
+            //    if(hit.distance < 0.2f && rdb.velocity.y <= 0)
+            //    {
+            //        StartCoroutine(Idle());
+            //    }
+            //}
+            //else
+            //{
+            //    anim.SetFloat("GroundDistance", 5);
+            //}
+           yield return new WaitForFixedUpdate();
+        }
+        
+     
+    }
+    private void OnAnimatorIK(int layerIndex)
+    {
+        if(ikActive)
+        {
+            anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+            if (Physics.Raycast(transform.position + Vector3.up, transform.forward, out RaycastHit hit, 10, 65279))
             {
-                anim.SetFloat("GroundDistance", 5);
+                anim.SetIKPosition(AvatarIKGoal.LeftHand, hit.point);
             }
-            yield return new WaitForEndOfFrame();
         }
     }
 }
