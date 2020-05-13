@@ -11,6 +11,7 @@ public class IAWalk : MonoBehaviour
     public Animator anim;
     public Vector3 patrolposition;
     public float stoppedTime;
+    public static IAWalk Instance;
 
     public enum IaState
     {
@@ -24,14 +25,16 @@ public class IAWalk : MonoBehaviour
     public IaState currentState;
     void Start()
     {
-         patrolposition = new Vector3(transform.position.x + Random.Range(-10, 10),
-                                     transform.position.y,
-                                     transform.position.z + Random.Range(-10, 10));
+        Instance = this;
+        patrolposition = new Vector3(transform.position.x + Random.Range(-10, 10),
+                                    transform.position.y,
+                                    transform.position.z + Random.Range(-10, 10));
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         switch (currentState)
         {
             case IaState.Stopped:
@@ -53,7 +56,8 @@ public class IAWalk : MonoBehaviour
                 Patrol();
                 break;
 
-        }                
+        }
+        
         anim.SetFloat("Velocity", agent.velocity.magnitude);
     }
 
@@ -73,9 +77,12 @@ public class IAWalk : MonoBehaviour
                                      transform.position.y,
                                      transform.position.z + Random.Range(-10, 10));
         }
-        if (Vector3.Distance(transform.position, target.transform.position) < 5)
+        if (target != null)
         {
-            currentState = IaState.Berserk;
+            if (Vector3.Distance(transform.position, target.transform.position) < 5)
+            {
+                currentState = IaState.Berserk;
+            }
         }
 
     }
@@ -83,28 +90,37 @@ public class IAWalk : MonoBehaviour
     {
         agent.isStopped = true;
         anim.SetBool("Attack", false);
-        if(Vector3.Distance(transform.position,target.transform.position)>5)
+        if (target != null)
         {
-            currentState = IaState.Patrol;
+            if (Vector3.Distance(transform.position, target.transform.position) > 5)
+            {
+                currentState = IaState.Patrol;
+            }
         }
     }
     void Berserk()
     {
         agent.isStopped = false;
-        agent.SetDestination(target.transform.position);
-        anim.SetBool("Attack", false);
-        if (Vector3.Distance(transform.position, target.transform.position) < 3)
+        if (target != null)
         {
-            currentState = IaState.Attack;
+            agent.SetDestination(target.transform.position);
+            anim.SetBool("Attack", false);
+            if (Vector3.Distance(transform.position, target.transform.position) < 3)
+            {
+                currentState = IaState.Attack;
+            }
         }
     }
     void Attack()
     {
         agent.isStopped = true;
         anim.SetBool("Attack", true);
-        if (Vector3.Distance(transform.position, target.transform.position) > 5)
+        if (target != null)
         {
-            currentState = IaState.Berserk;
+            if (Vector3.Distance(transform.position, target.transform.position) > 3)
+            {
+                currentState = IaState.Berserk;
+            }
         }
     }
     void Damage()

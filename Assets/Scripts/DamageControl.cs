@@ -11,6 +11,8 @@ public class DamageControl : MonoBehaviour
     public IAWalk iawalk;
     private Vector3 pos;
     public GameObject obj;
+    public SkinnedMeshRenderer mesh;
+    public int hits;
     void Start()
     {
                 
@@ -23,6 +25,11 @@ public class DamageControl : MonoBehaviour
         {
             iawalk.currentState = IAWalk.IaState.Dying;
             Destroy(gameObject, 3);            
+        }
+        if(hits>=3)
+        {
+            iawalk.currentState = IAWalk.IaState.Dying;
+            Destroy(gameObject, 3);
         }
         
     }
@@ -39,13 +46,15 @@ public class DamageControl : MonoBehaviour
     }
     IEnumerator Blink()
     {
-        //int blinks = 10;
-        //while (blinks > 0)
-        //{
-            iawalk.currentState = IAWalk.IaState.Damage;
+        iawalk.currentState = IAWalk.IaState.Damage;
+        hits++;
+        int blinks = 10;
+        while (blinks > 0)
+        {
+            mesh.enabled = !mesh.enabled;
             yield return new WaitForSeconds(0.1f);
-            //blinks--;
-        //}
+            blinks--;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -81,11 +90,12 @@ public class DamageControl : MonoBehaviour
     
     private void BlackHoleExplode()
     {
+        GetComponent<IAWalk>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;        
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponent<Rigidbody>().mass = 10;
         GetComponent<Rigidbody>().angularDrag = 0;
         GetComponent<Rigidbody>().drag = 0;
-        GetComponent<IAWalk>().enabled = false;
-        GetComponent<NavMeshAgent>().enabled = false;        
         Destroy(gameObject, 3);
     }
    

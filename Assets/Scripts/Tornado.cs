@@ -27,6 +27,8 @@ public class Tornado : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             return;
+            //other.transform.position = Vector3.Lerp(rdb.transform.position, other.transform.position,Time.fixedDeltaTime);
+
         }
         if (other.attachedRigidbody)
         {
@@ -34,10 +36,15 @@ public class Tornado : MonoBehaviour
         }
         
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.gameObject.SendMessage("GetDamageTornado", SendMessageOptions.DontRequireReceiver);
+        
+    }
     void ObjDestroy()
     {        
         GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
-        Destroy(explo, 3);
+        Destroy(explo, 3);        
         Destroy(gameObject);
     }
 }

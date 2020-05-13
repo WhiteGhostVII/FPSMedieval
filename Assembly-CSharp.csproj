@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Axe.cs" />
     <Compile Include="Assets\Scripts\BlackHole.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\Bubble.cs" />
@@ -78,10 +79,13 @@
     <Compile Include="Assets\Scripts\GameOverCondition.cs" />
     <Compile Include="Assets\Scripts\GamepadControl.cs" />
     <Compile Include="Assets\Scripts\GuidedBomb.cs" />
+    <Compile Include="Assets\Scripts\IAController.cs" />
     <Compile Include="Assets\Scripts\IAWalk.cs" />
     <Compile Include="Assets\Scripts\ItemGrabber.cs" />
+    <Compile Include="Assets\Scripts\MenuGameOver.cs" />
     <Compile Include="Assets\Scripts\MenuInicial.cs" />
     <Compile Include="Assets\Scripts\MenuSecundario.cs" />
+    <Compile Include="Assets\Scripts\MenuVictory.cs" />
     <Compile Include="Assets\Scripts\Mine.cs" />
     <Compile Include="Assets\Scripts\Missile.cs" />
     <Compile Include="Assets\Scripts\ObjectDamage.cs" />

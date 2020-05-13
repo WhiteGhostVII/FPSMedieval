@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrdWalk : MonoBehaviour
 {
@@ -21,18 +22,25 @@ public class TrdWalk : MonoBehaviour
     public float jumpforce = 1000;
     float jumptime = 0.5f;
     public bool ikActive;
+    public int life = 150;
+    public SkinnedMeshRenderer mesh;
+    public static TrdWalk Instance;
+    public Text vida;
 
     Vector3 direction;
     GameObject referenceObject;    
-    void Awake()
+    void Start()
     {
         StartCoroutine(Idle());
-        referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
+        Instance = this;
+        vida.text = "Vida:"+ life;
+        //referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        vida.text = "Vida:" + life;
         referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         move = referenceObject.transform.TransformDirection(move);
@@ -49,6 +57,11 @@ public class TrdWalk : MonoBehaviour
         {
             anim.SetFloat("GroundDistance", hit.distance);
         }
+        if(life <= 0)
+        {
+            //Destroy(gameObject, 3);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+        }
     }
     private void Update()
     {
@@ -63,6 +76,23 @@ public class TrdWalk : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             jumptime = 0;
+        }
+    }
+    public void DamageAxe()
+    {
+        StartCoroutine(Blink());
+        life--;
+        print("Player Hitted");
+    }
+    IEnumerator Blink()
+    {
+        
+        int blinks = 10;
+        while (blinks > 0)
+        {
+            mesh.enabled = !mesh.enabled;
+            yield return new WaitForSeconds(0.1f);
+            blinks--;
         }
     }
     IEnumerator Idle()

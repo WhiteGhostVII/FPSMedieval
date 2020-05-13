@@ -12,7 +12,10 @@ public class PhisicalWeapon : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        
+        
         collision.gameObject.SendMessage("Damage", SendMessageOptions.DontRequireReceiver);
+        
     }
     public void DesativeWeapon()
     {

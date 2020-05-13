@@ -153,7 +153,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha8))
         {
             indexWeapon = 7;
-            textArma.text = "Arma Atual: Shuriken";
+            textArma.text = "Arma Atual: RasenShuriken";
         }
         if (Input.GetKey(KeyCode.Alpha9))
         {
@@ -226,7 +226,7 @@ public class PlayerShoot : MonoBehaviour
             if (indexWeapon == 7)
             {
                 indexWeapon = 7;
-                textArma.text = "Arma Atual: Shuriken";
+                textArma.text = "Arma Atual: RasenShuriken";
             }
             if (indexWeapon == 8)
             {

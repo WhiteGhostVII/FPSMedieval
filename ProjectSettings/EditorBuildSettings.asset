@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuEscolhaPlayer.unity
     guid: 44cfbda867dc7a5439ae8c9ae80fd0e4
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 54d7312e1ef218f45b9a5f7d91de5b42
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 43532a416269f334faa6739df0c1b35e
   m_configObjects: {}
