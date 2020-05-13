@@ -1,2 +1,2 @@
 # FPSMedieval
- Game Fps com multiplas armas
+ Game Fps com múltiplas armas e com variação de terceira pessoa
