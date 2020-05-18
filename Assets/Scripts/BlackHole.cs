@@ -51,7 +51,7 @@ public class BlackHole : MonoBehaviour
                     {
                         //hit.rigidbody.constraints = RigidbodyConstraints.None;
                         hit.rigidbody.AddExplosionForce(bombForce, transform.position, 100000);
-                        hit.transform.position = Vector3.Lerp(hit.transform.position, rdb.position, 2f);
+                        //hit.transform.position = Vector3.Lerp(hit.transform.position, rdb.position, 2f);
                         //hit.transform.position = rdb.position;
                     }
                     //Objetos grudarem na posição do black hole

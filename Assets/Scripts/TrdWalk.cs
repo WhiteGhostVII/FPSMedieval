@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ public class TrdWalk : MonoBehaviour
     public SkinnedMeshRenderer mesh;
     public static TrdWalk Instance;
     public Text vida;
+    //PlayerControls controls;
 
     Vector3 direction;
     GameObject referenceObject;    
@@ -33,14 +35,17 @@ public class TrdWalk : MonoBehaviour
     {
         StartCoroutine(Idle());
         Instance = this;
-        vida.text = "Vida:"+ life;
+        vida.text = "Vida: " + life;
+        //controls = new PlayerControls();
+        //controls.Gameplay.Fire.performed += ctx => AttackMeele();
+        //controls.Gameplay.Rotate.performed += ctx => MovHeadX();
         //referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        vida.text = "Vida:" + life;
+        vida.text = "Vida: " + life;
         referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         move = referenceObject.transform.TransformDirection(move);
@@ -65,10 +70,7 @@ public class TrdWalk : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
-        {
-            StartCoroutine(Attack());
-        }
+        AttackMeele();        
         if(Input.GetButtonDown("Jump"))
         {
             StartCoroutine(Jump());
@@ -78,11 +80,24 @@ public class TrdWalk : MonoBehaviour
             jumptime = 0;
         }
     }
+    //void MovHeadX()
+    //{
+    //    direction.y = Input.GetAxis("GamepadViewX");
+    //    Vector3 globalmove = transform.TransformDirection(move);
+    //    transform.Rotate(direction);
+    //}
     public void DamageAxe()
     {
         StartCoroutine(Blink());
         life--;
         print("Player Hitted");
+    }
+    public void AttackMeele()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(Attack());
+        }
     }
     IEnumerator Blink()
     {

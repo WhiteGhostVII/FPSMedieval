@@ -40,5 +40,13 @@ public class MenuSecundario : MonoBehaviour
         //ControlTPSPlayer.Instance.DesativarGameObjectFPS();
         //gameObject.SendMessage("DesativarGameObjectFPS", SendMessageOptions.DontRequireReceiver);
     }
-    
+    public void BotaoDicas()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MenuDicas");
+    }
+    public void BotaoDanoDasArmas()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MenuDanoDasArmas");
+    }
+
 }

@@ -51,7 +51,7 @@ public class C4 : MonoBehaviour
                         hit.rigidbody.isKinematic = false;
                     }                    
                     hit.rigidbody.AddExplosionForce(bombForce, transform.position, 5);
-                    hit.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
+                    //hit.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
                     hit.collider.gameObject.SendMessage("GetDamageC4", SendMessageOptions.DontRequireReceiver);
                 }
             }

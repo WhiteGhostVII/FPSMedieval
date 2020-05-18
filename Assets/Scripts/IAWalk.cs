@@ -79,7 +79,7 @@ public class IAWalk : MonoBehaviour
         }
         if (target != null)
         {
-            if (Vector3.Distance(transform.position, target.transform.position) < 5)
+            if (Vector3.Distance(transform.position, target.transform.position) < 6)
             {
                 currentState = IaState.Berserk;
             }
@@ -95,6 +95,10 @@ public class IAWalk : MonoBehaviour
             if (Vector3.Distance(transform.position, target.transform.position) > 5)
             {
                 currentState = IaState.Patrol;
+            }
+            if (Vector3.Distance(transform.position, target.transform.position) < 3)
+            {
+                currentState = IaState.Attack;
             }
         }
     }

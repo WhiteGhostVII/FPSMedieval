@@ -1,53 +1,84 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class DamageControl : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int lifes = 3;
+    public int life = 100;
     //public int kills = 0;
     public IAWalk iawalk;
     private Vector3 pos;
     public GameObject obj;
     public SkinnedMeshRenderer mesh;
     public int hits;
+    public TextMeshPro vida; 
     void Start()
     {
-                
+        vida.text = "" + life;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lifes <= 0)
+        vida.text = "" + life;
+        if (life <= 0)
         {
             iawalk.currentState = IAWalk.IaState.Dying;
+            life = 0;
             Destroy(gameObject, 3);            
         }
-        if(hits>=3)
-        {
-            iawalk.currentState = IAWalk.IaState.Dying;
-            Destroy(gameObject, 3);
-        }
+        //if(hits>=3)
+        //{
+        //    iawalk.currentState = IAWalk.IaState.Dying;
+        //    Destroy(gameObject, 3);
+        //}
         
     }
     public void GetDamage()
     {        
         iawalk.currentState = IAWalk.IaState.Dying;
+        life = 0;
         Destroy(gameObject, 3);
     }
     
     public void Damage()
     {
-        StartCoroutine(Blink());
+        StartCoroutine(Blink());        
         //Destroy(gameObject);
+    }
+    private void GetDamageC4()
+    {
+        life -= 50;
+        iawalk.currentState = IAWalk.IaState.Damage;
+    }
+    private void GetDamageBomb()
+    {
+        life -= 50;
+        iawalk.currentState = IAWalk.IaState.Damage;
+    }
+    private void GetDamageMissile()
+    {
+        iawalk.currentState = IAWalk.IaState.Damage;
+        life -= 75;
+    }
+    private void GetDamageMine()
+    {
+        life -= 25;
+        iawalk.currentState = IAWalk.IaState.Damage;
+    }
+    private void GetDamageShurikenIA()
+    {
+        life = 0;
     }
     IEnumerator Blink()
     {
         iawalk.currentState = IAWalk.IaState.Damage;
-        hits++;
+        life -= 30;
+        //hits++;
         int blinks = 10;
         while (blinks > 0)
         {
@@ -67,12 +98,12 @@ public class DamageControl : MonoBehaviour
         
         if (collision.collider.CompareTag("Sniper"))
         {
-            lifes--;
+            life-=30;
             iawalk.currentState = IAWalk.IaState.Damage;
-        }
-        if(collision.collider.CompareTag("C4"))
-        {
-            iawalk.currentState = IAWalk.IaState.Damage;            
+        }        
+        if (collision.collider.CompareTag("C4"))
+        {            
+            //iawalk.currentState = IAWalk.IaState.Damage;            
         }
         if(collision.collider.CompareTag("Bubble"))
         {
@@ -84,8 +115,13 @@ public class DamageControl : MonoBehaviour
             transform.LookAt(pos);
             GetComponent<IAWalk>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
-        }     
-        
+        }
+        if (collision.collider.CompareTag("Tornado"))
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; 
+        }
+
     }
     
     private void BlackHoleExplode()
@@ -96,7 +132,8 @@ public class DamageControl : MonoBehaviour
         GetComponent<Rigidbody>().mass = 10;
         GetComponent<Rigidbody>().angularDrag = 0;
         GetComponent<Rigidbody>().drag = 0;
-        Destroy(gameObject, 3);
+        life = 0;
+        //Destroy(gameObject, 3);
     }
    
 }

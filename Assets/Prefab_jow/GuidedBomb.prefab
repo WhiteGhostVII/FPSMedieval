@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4647502933565148829}
   m_Layer: 2
   m_Name: GuidedBomb
-  m_TagString: Untagged
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

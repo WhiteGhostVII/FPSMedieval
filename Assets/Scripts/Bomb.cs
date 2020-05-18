@@ -35,7 +35,7 @@ public class Bomb : MonoBehaviour
                         hit.rigidbody.isKinematic = false;
                     }
                     hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
-                    hit.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
+                    //hit.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
                     hit.collider.gameObject.SendMessage("GetDamageBomb", SendMessageOptions.DontRequireReceiver);
                 }
             }

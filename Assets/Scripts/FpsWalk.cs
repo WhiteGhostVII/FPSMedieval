@@ -81,7 +81,7 @@ public class FpsWalk : MonoBehaviour
     }
     private void GetDamageTornado()
     {
-        life -= 150;
+        life -= 75;
     }
     private void GetDamageMine()
     {
@@ -89,11 +89,11 @@ public class FpsWalk : MonoBehaviour
     }
     private void GetDamageShuriken()
     {
-        life -= 180;
+        life -= 75;
     }
     private void GetDamageBlackHole()
     {
-        life -= 10;
+        life -= 150;
     }
     void OnEnable()
     {

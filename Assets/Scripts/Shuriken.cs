@@ -25,7 +25,7 @@ public class Shuriken : MonoBehaviour
     {
         if (collision.collider.CompareTag("Inimigo"))
         {
-            collision.collider.gameObject.SendMessage("GetDamage", SendMessageOptions.DontRequireReceiver);
+            collision.collider.gameObject.SendMessage("GetDamageShurikenIA", SendMessageOptions.DontRequireReceiver);
         }
         if (collision.collider.CompareTag("Player"))
         {
