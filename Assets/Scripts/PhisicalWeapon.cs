@@ -9,13 +9,11 @@ public class PhisicalWeapon : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }
-    private void OnCollisionEnter(Collision collision)
+    }    
+    public void OnCollisionEnter(Collision collision)
     {
-        
-        
         collision.gameObject.SendMessage("Damage", SendMessageOptions.DontRequireReceiver);
-        
+
     }
     public void DesativeWeapon()
     {

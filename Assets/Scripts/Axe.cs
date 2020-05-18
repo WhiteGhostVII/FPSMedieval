@@ -12,8 +12,10 @@ public class Axe : MonoBehaviour
     }
     private void OnCollisionEnter (Collision collision)
     {
-           
-        collision.gameObject.SendMessage("DamageAxe", SendMessageOptions.DontRequireReceiver);
+          
+         collision.gameObject.SendMessage("DamageAxe", SendMessageOptions.DontRequireReceiver);
+            
+        
         
     }    
 

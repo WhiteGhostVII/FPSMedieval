@@ -18,6 +18,7 @@ TagManager:
   - Missile
   - Mine
   - Tornado
+  - Sword
   layers:
   - Default
   - TransparentFX

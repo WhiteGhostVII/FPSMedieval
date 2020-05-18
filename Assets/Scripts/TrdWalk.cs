@@ -26,8 +26,7 @@ public class TrdWalk : MonoBehaviour
     public int life = 150;
     public SkinnedMeshRenderer mesh;
     public static TrdWalk Instance;
-    public Text vida;
-    //PlayerControls controls;
+    public Text vida;    
 
     Vector3 direction;
     GameObject referenceObject;    
@@ -35,10 +34,7 @@ public class TrdWalk : MonoBehaviour
     {
         StartCoroutine(Idle());
         Instance = this;
-        vida.text = "Vida: " + life;
-        //controls = new PlayerControls();
-        //controls.Gameplay.Fire.performed += ctx => AttackMeele();
-        //controls.Gameplay.Rotate.performed += ctx => MovHeadX();
+        vida.text = "Vida: " + life;                
         //referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
     }
 
@@ -57,7 +53,11 @@ public class TrdWalk : MonoBehaviour
         
         rdb.AddForce(move * (movforce/(rdb.velocity.magnitude + 1)));
 
-        rdb.AddForce(-rdb.velocity * 250);
+        rdb.AddForce(-rdb.velocity.x * 250, rdb.velocity.y * 2, -rdb.velocity.z * 250);
+
+        //Vector3 velocityWoY = new Vector3(rdb.velocity.x, 0, rdb.velocity.z);
+        //rdb.AddForce(-velocityWoY * 500);
+
         if (Physics.Raycast(transform.position + Vector3.up*.5f, Vector3.down, out RaycastHit hit, 65279))
         {
             anim.SetFloat("GroundDistance", hit.distance);
@@ -70,16 +70,24 @@ public class TrdWalk : MonoBehaviour
     }
     private void Update()
     {
-        AttackMeele();        
+               
         if(Input.GetButtonDown("Jump"))
         {
             StartCoroutine(Jump());
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(Attack());
+        }
+        if (Gamepad.current.rightTrigger.isPressed)
+        {
+            StartCoroutine(Attack());
         }
         if (Input.GetButtonUp("Jump"))
         {
             jumptime = 0;
         }
-    }
+    }    
     //void MovHeadX()
     //{
     //    direction.y = Input.GetAxis("GamepadViewX");
@@ -91,14 +99,7 @@ public class TrdWalk : MonoBehaviour
         StartCoroutine(Blink());
         life--;
         print("Player Hitted");
-    }
-    public void AttackMeele()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            StartCoroutine(Attack());
-        }
-    }
+    }    
     IEnumerator Blink()
     {
         
@@ -164,6 +165,8 @@ public class TrdWalk : MonoBehaviour
         {
             rdb.AddForce(Vector3.up * jumpforce * jumptime);
             jumptime -= Time.fixedDeltaTime;
+            //rdb.angularDrag = 0;
+            //rdb.drag = 0;
 
             if(jumptime < 0)
             {

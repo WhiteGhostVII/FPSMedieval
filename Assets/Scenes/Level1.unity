@@ -2763,7 +2763,7 @@ PrefabInstance:
     - target: {fileID: 5227811458979020077, guid: 5cda74f0395038745840fab7620e1b3f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.58
+      value: -5.56
       objectReference: {fileID: 0}
     - target: {fileID: 5227811458979020077, guid: 5cda74f0395038745840fab7620e1b3f,
         type: 3}
@@ -4862,6 +4862,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1749211676, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1749211677, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -4870,6 +4874,10 @@ PrefabInstance:
       propertyPath: vida
       value: 
       objectReference: {fileID: 1591646043}
+    - target: {fileID: 1749211678, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+      propertyPath: jumpforce
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 1749211681, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
       propertyPath: m_Enabled
       value: 1

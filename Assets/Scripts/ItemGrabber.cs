@@ -23,7 +23,8 @@ public class ItemGrabber : MonoBehaviour
             other.transform.localPosition = Vector3.zero;
             weaponOnHand.GetComponent<Rigidbody>().isKinematic = true;
             other.transform.localRotation = Quaternion.identity;
-            other.transform.gameObject.layer = transform.gameObject.layer;            
+            other.transform.gameObject.layer = transform.gameObject.layer;
+            other.tag = "Sword";
             
         }
     }

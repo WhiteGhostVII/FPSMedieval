@@ -54,10 +54,10 @@ public class PlayerShoot : MonoBehaviour
         {
             myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
         }
-        //if (myprojectile.GetComponent<Shuriken>())
-        //{
-        //    GetComponent<AudioSource>().Play();
-        //}
+        if (myprojectile.GetComponent<Shuriken>())
+        {
+            PlayAudio();
+        }
     }
     void FireMouse()
     {
@@ -281,7 +281,7 @@ public class PlayerShoot : MonoBehaviour
             if (indexWeapon == 7)
             {
                 indexWeapon = 7;
-                textArma.text = "Arma Atual: Shuriken";
+                textArma.text = "Arma Atual: RasenShuriken";
             }
             if (indexWeapon == 8)
             {
