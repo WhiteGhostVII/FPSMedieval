@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\ControlFPSPlayer.cs" />
     <Compile Include="Assets\Scripts\ControlTPSPlayer.cs" />
     <Compile Include="Assets\Scripts\DamageControl.cs" />
+    <Compile Include="Assets\Scripts\DayCicle.cs" />
     <Compile Include="Assets\Scripts\DesativeIAS.cs" />
     <Compile Include="Assets\Scripts\DesativeIAsFps.cs" />
     <Compile Include="Assets\Scripts\FPSPlayer.cs" />
