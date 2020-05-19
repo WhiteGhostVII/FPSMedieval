@@ -15,6 +15,7 @@ public class PhisicalWeapon : MonoBehaviour
         collision.gameObject.SendMessage("Damage", SendMessageOptions.DontRequireReceiver);
 
     }
+    
     public void DesativeWeapon()
     {
         gameObject.SetActive(false);

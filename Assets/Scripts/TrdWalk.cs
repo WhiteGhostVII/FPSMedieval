@@ -94,12 +94,18 @@ public class TrdWalk : MonoBehaviour
     //    Vector3 globalmove = transform.TransformDirection(move);
     //    transform.Rotate(direction);
     //}
-    public void DamageAxe()
+    //public void DamageAxe()
+    //{
+    //    StartCoroutine(Blink());
+    //    life--;
+    //    print("Player Hitted");
+    //}
+    public void DamageAxeTPS()
     {
         StartCoroutine(Blink());
         life--;
         print("Player Hitted");
-    }    
+    }
     IEnumerator Blink()
     {
         

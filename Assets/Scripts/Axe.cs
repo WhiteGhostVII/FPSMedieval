@@ -12,11 +12,14 @@ public class Axe : MonoBehaviour
     }
     private void OnCollisionEnter (Collision collision)
     {
-          
-         collision.gameObject.SendMessage("DamageAxe", SendMessageOptions.DontRequireReceiver);
-            
-        
-        
-    }    
+        //collision.gameObject.SendMessage("DamageAxe", SendMessageOptions.DontRequireReceiver);
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.SendMessage("DamageAxeFPS", SendMessageOptions.DontRequireReceiver);
+        other.gameObject.SendMessage("DamageAxeTPS", SendMessageOptions.DontRequireReceiver);
+    }
+
 
 }

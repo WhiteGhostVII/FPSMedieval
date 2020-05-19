@@ -51,7 +51,12 @@ public class FpsWalk : MonoBehaviour
         Vector3 globalmove = transform.TransformDirection(move);        
         transform.Rotate(rot);
     }
-    public void DamageAxe()
+    //public void DamageAxe()
+    //{
+    //    StartCoroutine(Blink());
+    //    life--;
+    //}
+    public void DamageAxeFPS()
     {
         StartCoroutine(Blink());
         life--;

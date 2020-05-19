@@ -113,10 +113,14 @@ public class IAWalk : MonoBehaviour
             {
                 currentState = IaState.Attack;
             }
+            if (Vector3.Distance(transform.position, target.transform.position) > 12)
+            {
+                currentState = IaState.Patrol;
+            }
         }
     }
     void Attack()
-    {
+    {        
         agent.isStopped = true;
         anim.SetBool("Attack", true);
         if (target != null)

@@ -2,28 +2,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayCicle : MonoBehaviour
 {
     // Start is called before the first frame update
     public float daytime;
     float lightdegrees = 0;
-    public float timeScale = 1;
+    public float timeScale = 360;
     public TimeSpan mytime;
+    string mytimeHour;
+    string mytimeMinute;
+    string mytimeDay;
     public Light sun;
     Color fogcolor;
     public Gradient ambientGradient;
+    public Text TimeTPS;
+    public Text TimeFPS;
     void Start()
     {
         fogcolor = RenderSettings.fogColor;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        daytime += Time.deltaTime * timeScale;
+   
+        if (mytime.Hours >= 0 && mytime.Hours < 6)
+        {
+            TimeTPS.text = "Hora da Madrugada: " + mytimeHour + ":" + mytimeMinute + "\nDia " + mytimeDay;
+            TimeFPS.text = "Hora da Madrugada: " + mytimeHour + ":" + mytimeMinute + "\nDia " + mytimeDay;
+
+        }
+        else if (mytime.Hours >= 6 && mytime.Hours < 18)
+        {
+            TimeTPS.text = "Hora do Dia: " + mytimeHour + ":" + mytimeMinute + "\nDia " + mytimeDay;
+            TimeFPS.text = "Hora do Dia: " + mytimeHour + ":" + mytimeMinute + "\nDia " + mytimeDay;
+        }
+        else if (mytime.Hours >= 18 && mytime.Hours < 24)
+        {
+            TimeTPS.text = "Hora da Noite: " + mytimeHour + ":" + mytimeMinute + "\nDia " + mytimeDay;
+            TimeFPS.text = "Hora da Noite: " + mytimeHour + ":" + mytimeMinute + "\nDia " + mytimeDay;
+        }
+
+
+        daytime += UnityEngine.Time.deltaTime * timeScale;
         mytime = TimeSpan.FromSeconds(daytime);
-        print(mytime.ToString());
+        mytimeDay = mytime.Days.ToString();
+        mytimeHour = mytime.Hours.ToString();
+        mytimeMinute = mytime.Minutes.ToString();
+        //print(mytime.ToString());
 
 
         lightdegrees = 360 * (daytime / 86400);
