@@ -79,10 +79,14 @@ public class TrdWalk : MonoBehaviour
         {
             StartCoroutine(Attack());
         }
-        if (Gamepad.current.rightTrigger.isPressed)
+        if(Gamepad.all.Count > 0)
         {
-            StartCoroutine(Attack());
+            if (Gamepad.current.rightTrigger.isPressed)
+            {
+                StartCoroutine(Attack());
+            }
         }
+        
         if (Input.GetButtonUp("Jump"))
         {
             jumptime = 0;
@@ -94,18 +98,18 @@ public class TrdWalk : MonoBehaviour
     //    Vector3 globalmove = transform.TransformDirection(move);
     //    transform.Rotate(direction);
     //}
-    //public void DamageAxe()
-    //{
-    //    StartCoroutine(Blink());
-    //    life--;
-    //    print("Player Hitted");
-    //}
-    public void DamageAxeTPS()
+    public void DamageAxe()
     {
         StartCoroutine(Blink());
         life--;
         print("Player Hitted");
     }
+    //public void DamageAxeTPS()
+    //{
+    //    StartCoroutine(Blink());
+    //    life--;
+    //    print("Player Hitted");
+    //}
     IEnumerator Blink()
     {
         

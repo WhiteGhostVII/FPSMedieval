@@ -47,13 +47,13 @@ public class BlackHole : MonoBehaviour
                     hit.collider.gameObject.SendMessage("BlackHoleExplode", SendMessageOptions.DontRequireReceiver);
                     hit.collider.gameObject.SendMessage("GetDamageBlackHole", SendMessageOptions.DontRequireReceiver);
 
-                    if(hit.collider.gameObject.CompareTag("Player"))
-                    {
-                        //hit.rigidbody.constraints = RigidbodyConstraints.None;
-                        hit.rigidbody.AddExplosionForce(bombForce, transform.position, 100000);
-                        //hit.transform.position = Vector3.Lerp(hit.transform.position, rdb.position, 2f);
-                        //hit.transform.position = rdb.position;
-                    }
+                    //if(hit.collider.gameObject.CompareTag("Player"))
+                    //{
+                    //    //hit.rigidbody.constraints = RigidbodyConstraints.None;
+                    //    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 100000);
+                    //    //hit.transform.position = Vector3.Lerp(hit.transform.position, rdb.position, 2f);
+                    //    //hit.transform.position = rdb.position;
+                    //}
                     //Objetos grudarem na posição do black hole
                     //hit.rigidbody.transform.LookAt(rdb.transform.position,Vector3.up*1000);  
                     //hit.transform.position = rdb.position;

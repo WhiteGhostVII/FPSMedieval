@@ -18,6 +18,7 @@ public class ControlTPSPlayer : MonoBehaviour
         {
             DesativarGameObjectFPS();
             DesativeIAsFps.Instance.DesativeIAFps();
+            DesativePostesFPS.Instance.DesativePostesFps();
         }
     }
     public void AtivarGameObjectTPS()

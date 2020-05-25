@@ -19,6 +19,12 @@ public class DayCicle : MonoBehaviour
     public Gradient ambientGradient;
     public Text TimeTPS;
     public Text TimeFPS;
+    public delegate void MorningCall();
+    public delegate void NightCall();
+
+    public MorningCall myMorningCall;
+    public NightCall myNightCall;
+    bool day = false;
     void Start()
     {
         fogcolor = RenderSettings.fogColor;
@@ -61,5 +67,22 @@ public class DayCicle : MonoBehaviour
         sun.intensity = normalsun * 1.2f;
         RenderSettings.ambientLight = ambientGradient.Evaluate(normalsun + 0.4f);
         RenderSettings.fogColor = fogcolor * normalsun;
+        if(normalsun > 0)
+        {
+            if(!day)
+            {
+                myMorningCall();
+                day = true;
+            }
+        }
+        else
+        {
+            if(day)
+            {
+                myNightCall();
+                day = false;
+            }
+        }
+
     }
 }

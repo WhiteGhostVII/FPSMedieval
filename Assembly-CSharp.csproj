@@ -75,6 +75,8 @@
     <Compile Include="Assets\Scripts\DayCicle.cs" />
     <Compile Include="Assets\Scripts\DesativeIAS.cs" />
     <Compile Include="Assets\Scripts\DesativeIAsFps.cs" />
+    <Compile Include="Assets\Scripts\DesativePostesFPS.cs" />
+    <Compile Include="Assets\Scripts\DesativePostesTPS.cs" />
     <Compile Include="Assets\Scripts\FPSPlayer.cs" />
     <Compile Include="Assets\Scripts\FpsWalk.cs" />
     <Compile Include="Assets\Scripts\GameOverCondition.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\Scripts\IAController.cs" />
     <Compile Include="Assets\Scripts\IAWalk.cs" />
     <Compile Include="Assets\Scripts\ItemGrabber.cs" />
+    <Compile Include="Assets\Scripts\LightPost.cs" />
     <Compile Include="Assets\Scripts\MenuDanoDasArmas.cs" />
     <Compile Include="Assets\Scripts\MenuDicas.cs" />
     <Compile Include="Assets\Scripts\MenuGameOver.cs" />

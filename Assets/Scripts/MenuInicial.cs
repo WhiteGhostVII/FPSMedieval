@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuInicial : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Start is called before the first frame update    
     void Start()
     {
         
@@ -27,4 +27,5 @@ public class MenuInicial : MonoBehaviour
     {
         Application.Quit();
     }
+    
 }

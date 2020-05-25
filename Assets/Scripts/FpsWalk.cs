@@ -56,7 +56,7 @@ public class FpsWalk : MonoBehaviour
     //    StartCoroutine(Blink());
     //    life--;
     //}
-    public void DamageAxeFPS()
+    public void DamageAxe()
     {
         StartCoroutine(Blink());
         life--;
