@@ -15,7 +15,6 @@ public class TrdCam : MonoBehaviour
         zajust = -3;
         fakeObject = new GameObject();
         fakeObject.transform.rotation = player.transform.rotation;
-        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
     public GameObject GetReferenceObject()

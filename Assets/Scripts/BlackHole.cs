@@ -34,7 +34,7 @@ public class BlackHole : MonoBehaviour
         GameObject explo = Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(explo, 3);
         RaycastHit[] hits;
-        hits = Physics.SphereCastAll(transform.position, 200, Vector3.up, 100);
+        hits = Physics.SphereCastAll(transform.position, 1000000, Vector3.up, 100);
         
         if (hits.Length > 0)
         {
@@ -43,7 +43,7 @@ public class BlackHole : MonoBehaviour
                 if (hit.rigidbody) 
                 {
                     hit.rigidbody.isKinematic = false;
-                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 1000);
+                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 100000);
                     hit.collider.gameObject.SendMessage("BlackHoleExplode", SendMessageOptions.DontRequireReceiver);
                     hit.collider.gameObject.SendMessage("GetDamageBlackHole", SendMessageOptions.DontRequireReceiver);
 
