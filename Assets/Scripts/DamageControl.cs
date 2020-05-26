@@ -132,6 +132,7 @@ public class DamageControl : MonoBehaviour
         GetComponent<Rigidbody>().mass = 10;
         GetComponent<Rigidbody>().angularDrag = 0;
         GetComponent<Rigidbody>().drag = 0;
+        GetComponent<Rigidbody>().useGravity = true;
         life = 0;
         //Destroy(gameObject, 3);
     }
