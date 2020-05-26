@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -662,7 +662,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -163.9}
-  m_SizeDelta: {x: 795.9, y: 149.7}
+  m_SizeDelta: {x: 795.9, y: 184.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254646653
 MonoBehaviour:
@@ -698,10 +698,12 @@ MonoBehaviour:
   m_Text: "- Tome cuidado para n\xE3o encostar nos inimigos, ou voc\xEA perder\xE1
     pontos de vida.\n- Acesse a p\xE1gina de \"Dano das Armas\" e fique atento aos
     valores, algumas armas tamb\xE9m causam dano em voc\xEA. Enquanto outras n\xE3o
-    causam dano mas possuem efeitos interessantes.\n- Algumas armas possuem intera\xE7\xF5es
-    com as casas e objetos da vila, experimente \xE0 vontade.\n- No modo FPS, cada
-    arma possui um som especial ao ser utilizada, aumente o volume e aproveite.\n-
-    No modo TPS, existem 5 espadas raras espalhadas pelo mapa. Uma aventura o aguarda.\n"
+    causam dano mas possuem efeitos interessantes.\n- Tome cuidado ao utilizar a
+    arma \"rasenshuriken\", ela \xE9 poderosa e pode travar seu jogo, atire uma muni\xE7\xE3o
+    por vez.\n- Algumas armas possuem intera\xE7\xF5es com as casas e objetos da
+    vila, experimente \xE0 vontade.\n- No modo FPS, cada arma possui um som especial
+    ao ser utilizada, aumente o volume e aproveite.\n- No modo TPS, existem 5 espadas
+    raras espalhadas pelo mapa. Uma aventura o aguarda.\n"
 --- !u!222 &1254646654
 CanvasRenderer:
   m_ObjectHideFlags: 0

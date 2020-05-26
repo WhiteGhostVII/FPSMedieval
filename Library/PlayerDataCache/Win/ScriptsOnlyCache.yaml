@@ -2187,5 +2187,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/GameOver.unity
   - Assets/Scenes/MenuDicas.unity
   - Assets/Scenes/MenuDanoDasArmas.unity
-  playerPath: C:/Users/white/Desktop/Medieval 9_GravityOn/Medieval 9 - Swords And
-    Guns.exe
+  playerPath: C:/Users/white/Desktop/Medieval 9/Medieval 9 - Swords And Guns.exe

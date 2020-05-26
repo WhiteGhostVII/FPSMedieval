@@ -10,7 +10,7 @@ public class Shuriken : MonoBehaviour
     void Start()
     {        
         rdb = GetComponent<Rigidbody>();        
-        Invoke("Explode", 3);        
+        Invoke("Explode", 4);        
         Invoke("ObjDestroy", 11);        
         //gameObject.GetComponent<MeshRenderer>().material = mat1;    
         //PlayAudio();

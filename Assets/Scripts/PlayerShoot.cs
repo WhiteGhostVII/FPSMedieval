@@ -48,8 +48,7 @@ public class PlayerShoot : MonoBehaviour
         if (myprojectile.GetComponent<Shuriken>())
         {
             myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50000);
-        }
-
+        }       
         if (myprojectile.GetComponent<BlackHole>())
         {
             myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
@@ -83,12 +82,11 @@ public class PlayerShoot : MonoBehaviour
             if (myprojectile.GetComponent<Bubble>())
             {
                 myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50000);
-            }
+            }            
             if (myprojectile.GetComponent<Shuriken>())
             {
                 myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50000);
-            }
-
+            }           
             if (myprojectile.GetComponent<BlackHole>())
             {
                 myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 500);

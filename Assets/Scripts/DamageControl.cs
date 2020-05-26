@@ -131,8 +131,7 @@ public class DamageControl : MonoBehaviour
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponent<Rigidbody>().mass = 10;
         GetComponent<Rigidbody>().angularDrag = 0;
-        GetComponent<Rigidbody>().drag = 0;
-        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().drag = 0;        
         life = 0;
         //Destroy(gameObject, 3);
     }
