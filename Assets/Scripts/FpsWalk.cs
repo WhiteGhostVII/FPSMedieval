@@ -17,6 +17,7 @@ public class FpsWalk : MonoBehaviour
     {
         if(!chtr)
         chtr = GetComponent<CharacterController>();
+        Cursor.visible = false; 
         Cursor.lockState = CursorLockMode.Locked;
         controls = new PlayerControls();
         controls.Gameplay.Rotate.performed += ctx => MovHeadX();
