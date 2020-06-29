@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuDanoDasArmas.unity
     guid: d6ccb8f084bf1a74cbe35ed73e3f5684
+  - enabled: 1
+    path: Assets/Scenes/Srine01.unity
+    guid: 40e829400ba469348a168351eb7b2638
   m_configObjects: {}

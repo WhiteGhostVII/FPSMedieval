@@ -28,6 +28,7 @@ public class DayCicle : MonoBehaviour
     void Start()
     {
         fogcolor = RenderSettings.fogColor;
+        daytime = CommomStatus.currenttime;
         
     }
 
@@ -54,6 +55,7 @@ public class DayCicle : MonoBehaviour
 
 
         daytime += UnityEngine.Time.deltaTime * timeScale;
+        CommomStatus.currenttime = daytime;
         mytime = TimeSpan.FromSeconds(daytime);
         mytimeDay = mytime.Days.ToString();
         mytimeHour = mytime.Hours.ToString();

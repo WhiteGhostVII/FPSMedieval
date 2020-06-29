@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Bubble.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\C4.cs" />
+    <Compile Include="Assets\Scripts\CommomStatus.cs" />
     <Compile Include="Assets\Scripts\ControlFPSPlayer.cs" />
     <Compile Include="Assets\Scripts\ControlTPSPlayer.cs" />
     <Compile Include="Assets\Scripts\CursorScript.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\SelfDestroy.cs" />
     <Compile Include="Assets\Scripts\Shuriken.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\Srine.cs" />
     <Compile Include="Assets\Scripts\Tornado.cs" />
     <Compile Include="Assets\Scripts\TrdCam.cs" />
     <Compile Include="Assets\Scripts\TrdWalk.cs" />

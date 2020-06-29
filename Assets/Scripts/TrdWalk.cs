@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TrdWalk : MonoBehaviour
 {
@@ -32,10 +33,19 @@ public class TrdWalk : MonoBehaviour
     GameObject referenceObject;    
     void Start()
     {
+        CommomStatus.currentlife = life;
         StartCoroutine(Idle());
         Instance = this;
-        vida.text = "Vida: " + life;                
+        vida.text = "Vida: " + life;
         //referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            if(CommomStatus.lastPosition.magnitude>1)
+            {
+                transform.position = CommomStatus.lastPosition;                
+            }
+            
+        }
     }
 
     // Update is called once per frame
@@ -70,7 +80,7 @@ public class TrdWalk : MonoBehaviour
     }
     private void Update()
     {
-               
+        CommomStatus.currentlife = life;        
         if(Input.GetButtonDown("Jump"))
         {
             StartCoroutine(Jump());
