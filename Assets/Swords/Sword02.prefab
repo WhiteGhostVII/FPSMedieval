@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1818478380624401880
+--- !u!1 &6860858091635290456
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7576050228932055516}
-  - component: {fileID: 3869597531366480255}
-  - component: {fileID: 7181162922630405163}
-  - component: {fileID: 5641990702236601439}
+  - component: {fileID: 3398436430413985116}
+  - component: {fileID: 8338889790405656063}
+  - component: {fileID: 2711940790791583915}
+  - component: {fileID: 596237393515768031}
   m_Layer: 0
-  m_Name: Sword02
+  m_Name: Sword02 1
   m_TagString: WeaponDroped
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7576050228932055516
+--- !u!4 &3398436430413985116
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818478380624401880}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 6860858091635290456}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 21.5, y: 1.291, z: 51.337}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2273111762181697143}
+  - {fileID: 6449600501264370423}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3869597531366480255
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!54 &8338889790405656063
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818478380624401880}
+  m_GameObject: {fileID: 6860858091635290456}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -50,37 +50,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!65 &7181162922630405163
+--- !u!65 &2711940790791583915
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818478380624401880}
+  m_GameObject: {fileID: 6860858091635290456}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.16530393, y: 0.069862224, z: 0.9121618}
   m_Center: {x: 0.0022310987, y: 0.0008758381, z: 0.8319354}
---- !u!114 &5641990702236601439
+--- !u!114 &596237393515768031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818478380624401880}
+  m_GameObject: {fileID: 6860858091635290456}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f5537f3a2456f340948cd8e9c9d243a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &4593742851128548375
+--- !u!1001 &8775935325052647575
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7576050228932055516}
+    m_TransformParent: {fileID: 3398436430413985116}
     m_Modifications:
     - target: {fileID: 2327226115403018848, guid: 26dda1e81c1fa184f8ffaeb39ad7bfb8,
         type: 3}
@@ -152,6 +152,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3304613554085590166, guid: 26dda1e81c1fa184f8ffaeb39ad7bfb8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8975a019ca266c4ab383685ba57c58d, type: 2}
+    - target: {fileID: 5858133888772846848, guid: 26dda1e81c1fa184f8ffaeb39ad7bfb8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d2dd9a0157c55b46bf70e853cb8ecfd, type: 2}
     - target: {fileID: 6547270053017804577, guid: 26dda1e81c1fa184f8ffaeb39ad7bfb8,
         type: 3}
       propertyPath: m_Name
@@ -159,9 +169,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dda1e81c1fa184f8ffaeb39ad7bfb8, type: 3}
---- !u!4 &2273111762181697143 stripped
+--- !u!4 &6449600501264370423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2327226115403018848, guid: 26dda1e81c1fa184f8ffaeb39ad7bfb8,
     type: 3}
-  m_PrefabInstance: {fileID: 4593742851128548375}
+  m_PrefabInstance: {fileID: 8775935325052647575}
   m_PrefabAsset: {fileID: 0}

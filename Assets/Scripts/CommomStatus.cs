@@ -9,4 +9,5 @@ public class CommomStatus : MonoBehaviour
     public static float currenttime;
     public static int iakilled;
     public static int currentlife;
+    public static int weapononhand = -1;
 }

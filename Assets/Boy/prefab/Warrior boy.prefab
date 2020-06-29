@@ -74,7 +74,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!136 &1749211677
@@ -107,11 +107,11 @@ MonoBehaviour:
   anim: {fileID: 95798908753882946}
   rdb: {fileID: 1749211676}
   movforce: 10000
-  jumpforce: 10000
+  jumpforce: 5000
   ikActive: 0
   life: 200
   mesh: {fileID: 13700004}
-  vida: {fileID: 0}
+  vida: {fileID: 1162483126574081247}
 --- !u!136 &1749211681
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.4
   m_Height: 1.54
   m_Direction: 1
@@ -138,8 +138,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d5d34050bb45d49beb1f9bdd99094c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handposition: {fileID: 710345238}
   weaponOnHand: {fileID: 0}
+  handposition: {fileID: 710345238}
+  myobjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0

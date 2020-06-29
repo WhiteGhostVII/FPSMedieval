@@ -16,23 +16,27 @@ public class ControlFPSPlayer : MonoBehaviour
     {
         if(MenuSecundario.Instance.fpsapertado)
         {
-            DesativarGameObjectTPS();
+            if (gameObject != null)
+            {
+                DesativarGameObjectTPS();
+            }
             PhisicalWeapon.Instance.DesativeWeapon();
+            Srine.Instance.DesativeSrine();
             DesativeIAS.Instance.DesativeIA();
             DesativePostesTPS.Instance.DesativePostesTps();
         }
     }
     public void AtivarGameObjectFPS()
     {
-        gameObject.SetActive(true);
+         gameObject.SetActive(true);        
     }
     public void AutoDesativeFPS()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(false); 
     }
     public void DesativarGameObjectTPS()
     {
-        ControlTPSPlayer.Instance.AutoDesativeTPS();
+        ControlTPSPlayer.Instance.AutoDesativeTPS();        
     }
 
 }

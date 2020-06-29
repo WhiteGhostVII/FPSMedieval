@@ -75,7 +75,12 @@ public class TrdWalk : MonoBehaviour
         if(life <= 0)
         {
             //Destroy(gameObject, 3);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            CommomStatus.lastPosition = Vector3.zero;
+            //IAController.Instance.mortos.text = "Inimigos Eliminados: " + IAController.Instance.index;
+            //IAController.Instance.killsloaded = false;
+            //CommomStatus.iakilled = 0;
+            //IAController.Instance.index = 0;
+            SceneManager.LoadScene("GameOver");
         }
     }
     private void Update()

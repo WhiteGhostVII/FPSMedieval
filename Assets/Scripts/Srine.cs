@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 public class Srine : MonoBehaviour
 {
     public bool backtoworld = false;
-    public string srinetoload;    
+    public string srinetoload;
+    public static Srine Instance;
+    private void Start()
+    {
+        Instance = this;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -23,6 +28,10 @@ public class Srine : MonoBehaviour
         }
 
     }   
+    public void DesativeSrine()
+    {
+        gameObject.SetActive(false);
+    }
 
 
 }

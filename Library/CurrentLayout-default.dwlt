@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 356
     height: 526
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -448,23 +448,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: c8910300
       m_LastClickedID: 0
-      m_ExpandedIDs: 8adbebff7248ecffcc82ecff4cefecff7e43edffba7fedffa2ededffdc5aeeff3ee1eeff5a1aefff846eefff8ca7efff6214f0ff6c80f0ff529cf0ff7ed3f0ff30f4f0ff462cf1ff28d7f1ffaaf4f1ff6845f2ffd8e5f2ffd21ff3ffb83bf3ffba8cf3ffa0a8f3ffcec5f3ff4ae3f3ff1200f4ffcc6df4ff4c8bf4ff6864f5ff2065f6ff8cf1f6ff0c0ff7ff9482f8ff34bbf8ff52e1faff9c12fbffa891fbff9094fbffde98fbffb8affbffa6b6fbff88b8fbffb0b8fbff7cbffbff0ad4fbffd031fcfff4bafcffb6c8fcffaac9fcffd4cafcff82cbfcffaccbfcff4ae6fcffe6ebfcff10ecfcff7210fdff4216fdffc830fdffda32fdffba35fdff5856fdff6e58fdffa062fdffee77fdff024ffeff6250feff6450feff6870feff989efeffa69efeff1ccbfeff4acbfeff6e91ffff7291ffff2ab0ffff2eb0ffffe0b1ffffe4b1ffffa8b2ffff48b6ffff94deffff1afaffff6efbffff5ab100005ab700006a0b0100ac1001006a110100e41b0100e4210100ce63010054640100928d0100d49201009293010052380200563802009e5d0200b25f0200b65f0200002f0700042f070086340700443507004e770700a0ee0d002eb4110008c91100b4ee11004a031200043c1200
+      m_ExpandedIDs: 5a30f5ff52a1f5ff30dbf5ff52f9f5ffea30f6ffc267f6ff4e84f6ffb4bff6ff64c0f6ff1aecf7ffc043f9ff605ef9ffae60f9ffe885f9ffb48af9ffec8bf9ffc68cf9ffec8cf9fff88cf9fffe8cf9ff008df9ff068df9ff088df9ff168df9ff2a8df9ff848df9ff7858faffda5afaff8e7cfaffa47efaff829bfaffaa9dfafff09ffaff92d8fafffed8faff30dcfaffcafdfaff6e19fbffca36fbfff036fbfff236fbfff436fbfff636fbfffc36fbfffe36fbff0037fbff0237fbff0437fbff0637fbff0a37fbff0c37fbff2e37fbff4e3efbff42f5fdff86b3feff78cefeffc2eafeffac05ffffda3cffff5257ffff6efbffffdcb501006cb90100bad00100a6e90100e6e90100eae901002aea010032f00100aaf8010020070200be3b0200c23b0200023c0200063c020086fb02008a720300c8910300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Sword01
+        m_OriginalName: Sword01
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 129492
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -510,9 +510,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -24.8359, y: 4.907303, z: -6.159507}
+    m_Target: {x: -192.71675, y: 26.59177, z: -161.05824}
     speed: 2
-    m_Value: {x: -24.8359, y: 4.907303, z: -6.159507}
+    m_Value: {x: -192.71675, y: 26.59177, z: -161.05824}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -558,13 +558,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.2299967, y: 0.68836546, z: -0.24480513, w: 0.6439416}
+    m_Target: {x: -0.104540125, y: -0.54241335, z: 0.06776199, w: -0.8316275}
     speed: 2
-    m_Value: {x: 0.22984323, y: 0.68790615, z: -0.24464178, w: 0.6435119}
+    m_Value: {x: -0.10447032, y: -0.5420512, z: 0.06771674, w: -0.8310722}
   m_Size:
-    m_Target: 24.61821
+    m_Target: 28.068483
     speed: 2
-    m_Value: 24.61821
+    m_Value: 28.068483
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -938,10 +938,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 372}
-    m_SelectedIDs: 3c480000
-    m_LastClickedID: 18492
-    m_ExpandedIDs: 0000000090410000fa440000fc440000fe44000000450000024500000445000006450000084500000a4500000c4500000e45000010450000124500001445000016450000184500001a4500001c4500001e45000020450000ce460000d0460000e64600001e47000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 48480000
+    m_LastClickedID: 18504
+    m_ExpandedIDs: 000000009841000006450000084500000a4500000c4500000e45000010450000124500001445000016450000184500001a4500001c4500001e45000020450000224500002445000026450000284500002a4500002c45000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -969,7 +969,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000090410000fa440000fc440000fe44000000450000024500000445000006450000084500000a4500000c4500000e45000010450000124500001445000016450000184500001a4500001c4500001e45000020450000
+    m_ExpandedIDs: 000000009841000006450000084500000a4500000c4500000e45000010450000124500001445000016450000184500001a4500001c4500001e45000020450000224500002445000026450000284500002a4500002c450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1013,7 +1013,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 8}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1024,7 +1024,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 60
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 110
+  m_DirectoriesAreaWidth: 242
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1199,4 +1199,54 @@ MonoBehaviour:
     y: 73
     width: 275
     height: 926
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &28
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12059, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor:UnityEditor.Experimental.TerrainAPI:PaintTextureTool
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Failed to load
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 320
+    height: 550
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &29
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12059, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor:UnityEditor.Experimental.TerrainAPI:SetHeightTool
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Failed to load
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 320
+    height: 550
   m_ViewDataDictionary: {fileID: 0}

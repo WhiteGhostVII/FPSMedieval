@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -316,6 +316,7 @@ MonoBehaviour:
   over: 0
   index: 0
   mortos: {fileID: 481457175}
+  killsloaded: 0
 --- !u!114 &885152909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +545,36 @@ PrefabInstance:
       propertyPath: jumpforce
       value: 5000
       objectReference: {fileID: 0}
+    - target: {fileID: 1749211680, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+      propertyPath: myobjs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6978233998527600253, guid: 5cda74f0395038745840fab7620e1b3f,
+        type: 3}
+    - target: {fileID: 1749211680, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+      propertyPath: myobjs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6860858091635290456, guid: a34eac69e3825f64da6d0d60e43f385b,
+        type: 3}
+    - target: {fileID: 1749211680, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+      propertyPath: myobjs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8126554790213486393, guid: d39f76908019fef40a59c9202d4bfdb0,
+        type: 3}
+    - target: {fileID: 1749211680, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+      propertyPath: myobjs.Array.data[3]
+      value: 
+      objectReference: {fileID: 3716073063318657410, guid: d3b53176ececf48429c8f4d72ac9e63d,
+        type: 3}
+    - target: {fileID: 1749211680, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+      propertyPath: myobjs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1184452488900024302, guid: 9ca0b1cbba70fda4e85e8955005b34c9,
+        type: 3}
+    - target: {fileID: 1749211680, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
+      propertyPath: myobjs.Array.data[5]
+      value: 
+      objectReference: {fileID: 5967373307128848011, guid: c360a895ebffde145aee89dc37044987,
+        type: 3}
     - target: {fileID: 1749211681, guid: 052ccbd9375e2cf4eb3d4c2d82e08191, type: 3}
       propertyPath: m_Enabled
       value: 1

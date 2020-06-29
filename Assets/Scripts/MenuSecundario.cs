@@ -34,8 +34,8 @@ public class MenuSecundario : MonoBehaviour
     public void BotaoTPS()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("MenuEscolhaPlayer");
         tpsapertado = true;
+        //UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("MenuEscolhaPlayer");
         //ControlTPSPlayer.Instance.DesativarGameObjectFPS();
         //gameObject.SendMessage("DesativarGameObjectFPS", SendMessageOptions.DontRequireReceiver);
     }

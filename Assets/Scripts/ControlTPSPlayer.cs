@@ -16,14 +16,17 @@ public class ControlTPSPlayer : MonoBehaviour
     {
         if (MenuSecundario.Instance.tpsapertado)
         {
-            DesativarGameObjectFPS();
+            if (gameObject != null)
+            {
+                DesativarGameObjectFPS();
+            }
             DesativeIAsFps.Instance.DesativeIAFps();
             DesativePostesFPS.Instance.DesativePostesFps();
         }
     }
     public void AtivarGameObjectTPS()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(true);       
     }
     public void AutoDesativeTPS()
     {
@@ -32,7 +35,7 @@ public class ControlTPSPlayer : MonoBehaviour
     public void DesativarGameObjectFPS()
     {
         ControlFPSPlayer.Instance.AutoDesativeFPS();
-    }
+    }   
 
 
 }

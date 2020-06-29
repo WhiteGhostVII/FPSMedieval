@@ -11,11 +11,13 @@ public class IAController : MonoBehaviour
     public int index;
     public Text mortos;
     public bool killsloaded;
+    public static IAController Instance;
 
     private int iaCount = 10;
 
     void Start()
     {
+        Instance = this;
         killsloaded = false;
         index = CommomStatus.iakilled;
         GetAllIA();
@@ -73,7 +75,9 @@ public class IAController : MonoBehaviour
         {
             over = true;
             Debug.Log("Voce Venceu!!");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
+            index = 0;
+            CommomStatus.iakilled = 0;
+            SceneManager.LoadScene("Victory");
         }
         else
             over = false;
@@ -90,7 +94,7 @@ public class IAController : MonoBehaviour
                 if (ias[i] == null)
                 {
                     //index++;
-                    CommomStatus.iakilled++;
+                    CommomStatus.iakilled++;                    
                 }
             }
 
@@ -98,7 +102,9 @@ public class IAController : MonoBehaviour
             {
                 over = true;
                 Debug.Log("Voce Venceu!!");
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
+                killsloaded = false;
+                CommomStatus.iakilled = 0;
+                SceneManager.LoadScene("Victory");
             }
             else
                 over = false;
