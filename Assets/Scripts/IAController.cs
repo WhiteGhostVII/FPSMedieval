@@ -28,7 +28,7 @@ public class IAController : MonoBehaviour
             if (CommomStatus.lastPosition.magnitude>1)
             {
                 index = CommomStatus.iakilled;
-                print(CommomStatus.iakilled);
+                //print(CommomStatus.iakilled);
                 killsloaded = true;
             }
             
@@ -104,6 +104,7 @@ public class IAController : MonoBehaviour
                 Debug.Log("Voce Venceu!!");
                 killsloaded = false;
                 CommomStatus.iakilled = 0;
+                CommomStatus.currentlife = 200;
                 SceneManager.LoadScene("Victory");
             }
             else

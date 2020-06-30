@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 public class Srine : MonoBehaviour
 {
     public bool backtoworld = false;
-    public string srinetoload;
-    public static Srine Instance;
+    public string srinetoload;    
     private void Start()
     {
-        Instance = this;
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -27,11 +26,7 @@ public class Srine : MonoBehaviour
             }
         }
 
-    }   
-    public void DesativeSrine()
-    {
-        gameObject.SetActive(false);
-    }
+    }       
 
 
 }

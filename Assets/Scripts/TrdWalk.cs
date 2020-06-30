@@ -24,16 +24,18 @@ public class TrdWalk : MonoBehaviour
     public float jumpforce = 1000;
     float jumptime = 0.5f;
     public bool ikActive;
-    public int life = 150;
+    private int life = 200;
     public SkinnedMeshRenderer mesh;
     public static TrdWalk Instance;
-    public Text vida;    
+    public Text vida;
+    public bool lifeloaded;
 
     Vector3 direction;
     GameObject referenceObject;    
     void Start()
     {
-        CommomStatus.currentlife = life;
+        lifeloaded = false;
+        life = CommomStatus.currentlife;
         StartCoroutine(Idle());
         Instance = this;
         vida.text = "Vida: " + life;
@@ -42,7 +44,9 @@ public class TrdWalk : MonoBehaviour
         {
             if(CommomStatus.lastPosition.magnitude>1)
             {
-                transform.position = CommomStatus.lastPosition;                
+                transform.position = CommomStatus.lastPosition;
+                lifeloaded = true;
+                life = CommomStatus.currentlife;
             }
             
         }
@@ -51,7 +55,7 @@ public class TrdWalk : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        vida.text = "Vida: " + life;
+        vida.text = "Vida: " + CommomStatus.currentlife;
         referenceObject = Camera.main.GetComponent<TrdCam>().GetReferenceObject();
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         move = referenceObject.transform.TransformDirection(move);
@@ -77,15 +81,15 @@ public class TrdWalk : MonoBehaviour
             //Destroy(gameObject, 3);
             CommomStatus.lastPosition = Vector3.zero;
             //IAController.Instance.mortos.text = "Inimigos Eliminados: " + IAController.Instance.index;
-            //IAController.Instance.killsloaded = false;
-            //CommomStatus.iakilled = 0;
+            //IAController.Instance.killsloaded = false;            
             //IAController.Instance.index = 0;
+            CommomStatus.currentlife = 200;
             SceneManager.LoadScene("GameOver");
         }
     }
     private void Update()
     {
-        CommomStatus.currentlife = life;        
+        
         if(Input.GetButtonDown("Jump"))
         {
             StartCoroutine(Jump());
@@ -113,10 +117,23 @@ public class TrdWalk : MonoBehaviour
     //    Vector3 globalmove = transform.TransformDirection(move);
     //    transform.Rotate(direction);
     //}
+    public void LifeIsLoaded()
+    {
+        if(lifeloaded)
+        {            
+            CommomStatus.currentlife = life;
+            print(CommomStatus.currentlife);
+        }
+    }
+    public void VoidKill()
+    {
+        life = 0;
+    }
     public void DamageAxe()
     {
         StartCoroutine(Blink());
         life--;
+        CommomStatus.currentlife = life;
         print("Player Hitted");
     }
     //public void DamageAxeTPS()

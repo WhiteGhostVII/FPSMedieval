@@ -20,10 +20,10 @@ public class ControlFPSPlayer : MonoBehaviour
             {
                 DesativarGameObjectTPS();
             }
-            PhisicalWeapon.Instance.DesativeWeapon();
-            Srine.Instance.DesativeSrine();
+            PhisicalWeapon.Instance.DesativeWeapon();            
             DesativeIAS.Instance.DesativeIA();
             DesativePostesTPS.Instance.DesativePostesTps();
+            DesativeSrines.Instance.DesativeSrinesTPS();
         }
     }
     public void AtivarGameObjectFPS()

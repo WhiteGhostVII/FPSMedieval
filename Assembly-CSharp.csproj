@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\DesativeIAsFps.cs" />
     <Compile Include="Assets\Scripts\DesativePostesFPS.cs" />
     <Compile Include="Assets\Scripts\DesativePostesTPS.cs" />
+    <Compile Include="Assets\Scripts\DesativeSrines.cs" />
     <Compile Include="Assets\Scripts\FPSPlayer.cs" />
     <Compile Include="Assets\Scripts\FpsWalk.cs" />
     <Compile Include="Assets\Scripts\GameOverCondition.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Scripts\TrdCam.cs" />
     <Compile Include="Assets\Scripts\TrdWalk.cs" />
     <Compile Include="Assets\Scripts\VictoryCondition.cs" />
+    <Compile Include="Assets\Scripts\Void.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

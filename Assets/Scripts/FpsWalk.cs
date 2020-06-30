@@ -62,6 +62,10 @@ public class FpsWalk : MonoBehaviour
         StartCoroutine(Blink());
         life--;
     }
+    public void VoidKill()
+    {
+        life = 0;
+    }
     IEnumerator Blink()
     {
         
