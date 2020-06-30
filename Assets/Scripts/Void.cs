@@ -5,7 +5,7 @@ using UnityEngine;
 public class Void : MonoBehaviour
 {
     // Start is called before the first frame update    
-    void Start()
+    void Awake()
     {
         
     }
@@ -14,6 +14,6 @@ public class Void : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         collision.gameObject.SendMessage("VoidKill", SendMessageOptions.DontRequireReceiver);
-
     }
+    
 }

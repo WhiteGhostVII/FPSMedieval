@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\TrdWalk.cs" />
     <Compile Include="Assets\Scripts\VictoryCondition.cs" />
     <Compile Include="Assets\Scripts\Void.cs" />
+    <Compile Include="Assets\Scripts\VoidFPS.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

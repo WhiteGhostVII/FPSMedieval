@@ -61,10 +61,11 @@ public class FpsWalk : MonoBehaviour
     {
         StartCoroutine(Blink());
         life--;
-    }
-    public void VoidKill()
+    }    
+    private void VoidKillFPS()
     {
-        life = 0;
+        life -= 200;
+        print("Caiuuuuu");
     }
     IEnumerator Blink()
     {

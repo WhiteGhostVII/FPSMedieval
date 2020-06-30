@@ -661,8 +661,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -163.9}
-  m_SizeDelta: {x: 795.9, y: 184.68}
+  m_AnchoredPosition: {x: 0, y: -232}
+  m_SizeDelta: {x: 795.9, y: 301.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254646653
 MonoBehaviour:
@@ -703,7 +703,11 @@ MonoBehaviour:
     por vez.\n- Algumas armas possuem intera\xE7\xF5es com as casas e objetos da
     vila, experimente \xE0 vontade.\n- No modo FPS, cada arma possui um som especial
     ao ser utilizada, aumente o volume e aproveite.\n- No modo TPS, existem 5 espadas
-    raras espalhadas pelo mapa. Uma aventura o aguarda.\n"
+    raras espalhadas pelo mapa. Uma aventura o aguarda.\n\n                                                               
+    **      Novidades da vers\xE3o      **\n- Estruturas Misteriosas surgiram no
+    modo tps, explore-as para descobrir o que lhe aguarda.\n- agora quando voc\xEA
+    entra no mar, n\xE3o cai mais eternamente no limbo, mas tome cuidado!\n- O personagem
+    no modo tps ganhou uma nova apar\xEAncia, confira!\n\n\n"
 --- !u!222 &1254646654
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -746,7 +750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -34}
+  m_AnchoredPosition: {x: 0, y: -27}
   m_SizeDelta: {x: 315.98, y: 66.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306399313

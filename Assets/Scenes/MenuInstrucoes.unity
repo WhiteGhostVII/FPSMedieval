@@ -1583,12 +1583,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Em ambos os modos, seu objetivo \xE9 derrotar todos os inimigos e salvar
-    a vila.\nVoc\xEA possui 200 pontos de vida e tem 10 inimigos para eliminar, se
-    sua vida chegar a zero voc\xEA perde.\nEm ambos os modos, voc\xEA pode jogar
-    com mouse ou joystick, escolha o seu preferido e aproveite.\n(Joystick funcional
-    apenas durante a partida, utilize o mouse nos menus).\nAproveite o jogo e se
-    divirta!\n"
+  m_Text: "Em ambos os modos, seu objetivo \xE9 salvar a vila derrotando os inimigos
+    que a invadiram.\nVoc\xEA possui 200 pontos de vida e precisa eliminar 10 inimigos
+    para vencer, se sua vida chegar a zero voc\xEA perde.\nEm ambos os modos, voc\xEA
+    pode jogar com mouse ou joystick, escolha o seu preferido e aproveite.\n(Joystick
+    funcional apenas durante a partida, utilize o mouse nos menus).\nAproveite o
+    jogo e se divirta!\n"
 --- !u!222 &2081269099
 CanvasRenderer:
   m_ObjectHideFlags: 0
